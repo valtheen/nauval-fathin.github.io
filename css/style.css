@@ -182,13 +182,13 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
-    padding: 120px 5% 80px;
+    overflow: visible;
+    padding: 120px 5% 40px;
 }
 
 @media (min-width: 1025px) {
     .hero {
-        padding: 150px 5% 80px;
+        padding: 150px 5% 50px;
         min-height: auto;
     }
 }
