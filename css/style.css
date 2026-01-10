@@ -235,14 +235,23 @@ nav.scrolled {
     margin: 0 auto;
 }
 
+.hero-text {
+    text-align: left;
+}
+
 @media (min-width: 1025px) {
     .hero-content {
         gap: 5rem;
     }
-}
 
-.hero-text {
-    text-align: left;
+    .hero-text {
+        text-align: left;
+        padding-right: 2rem;
+    }
+
+    .hero-visual {
+        padding-left: 2rem;
+    }
 }
 
 .hero-text h1 {
