@@ -353,6 +353,22 @@ nav.scrolled {
     margin-bottom: 2rem;
 }
 
+.profile-header h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1025px) {
+    .profile-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .profile-header h3 {
+        font-size: 1.6rem;
+    }
+}
+
 .profile-img {
     width: 150px;
     height: 150px;
