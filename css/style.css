@@ -225,12 +225,24 @@ nav.scrolled {
 
 .hero-content {
     max-width: 1400px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 1;
+    margin: 0 auto;
+}
+
+@media (min-width: 1025px) {
+    .hero-content {
+        gap: 5rem;
+    }
+}
+
+.hero-text {
+    text-align: left;
 }
 
 .hero-text h1 {
@@ -242,6 +254,12 @@ nav.scrolled {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: fadeInUp 1s ease;
+}
+
+@media (min-width: 1400px) {
+    .hero-text h1 {
+        font-size: 4.5rem;
+    }
 }
 
 .hero-text .subtitle {
@@ -302,15 +320,32 @@ nav.scrolled {
 .hero-visual {
     position: relative;
     animation: fadeInRight 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1025px) {
+    .hero-visual {
+        justify-content: flex-end;
+    }
 }
 
 .profile-card {
     background: rgba(26, 26, 46, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 2.5rem;
     box-shadow: 0 8px 32px rgba(0, 123, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 100%;
+    width: 100%;
+}
+
+@media (min-width: 1025px) {
+    .profile-card {
+        padding: 3rem;
+    }
 }
 
 .profile-header {
@@ -324,7 +359,15 @@ nav.scrolled {
     border-radius: 50%;
     background: linear-gradient(135deg, #007bff, #00d4ff);
     padding: 4px;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.5rem;
+}
+
+@media (min-width: 1025px) {
+    .profile-img {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 2rem;
+    }
 }
 
 .profile-img-inner {
@@ -352,6 +395,13 @@ nav.scrolled {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-top: 2rem;
+}
+
+@media (min-width: 1025px) {
+    .stats {
+        gap: 1.2rem;
+        margin-top: 2.5rem;
+    }
 }
 
 .stat-item {
@@ -1860,10 +1910,38 @@ footer {
    ============================================ */
 
 /* Tablet / iPad (768px - 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 769px) {
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-text .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .profile-card {
+        padding: 2rem;
+    }
+}
+
+/* Mobile and small tablets (max-width: 768px) */
+@media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;
         gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-text {
         text-align: center;
     }
 
@@ -1923,10 +2001,33 @@ footer {
     }
 }
 
-@media (max-width: 968px) {
+/* Desktop adjustments - ensure proper layout */
+@media (min-width: 1025px) {
+    .hero {
+        padding: 0 5%;
+    }
+
     .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+        gap: 5rem;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+
+    .cta-buttons {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 968px) and (min-width: 769px) {
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .hero-text {
+        text-align: left;
     }
 
     .hero-text h1 {
@@ -1934,13 +2035,14 @@ footer {
     }
 
     .cta-buttons {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .nav-links {
         gap: 1rem;
         font-size: 0.9rem;
     }
+}
 
     .stats {
         grid-template-columns: repeat(3, 1fr);
