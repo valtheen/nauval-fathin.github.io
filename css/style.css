@@ -835,8 +835,20 @@ nav.scrolled {
 .filter-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 5% 40px;
+    padding: 40px 5% 30px;
     text-align: center;
+}
+
+@media (min-width: 1025px) {
+    .filter-section {
+        padding: 30px 5% 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-section {
+        padding: 30px 5% 20px;
+    }
 }
 
 .filter-tabs {
