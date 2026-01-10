@@ -3,89 +3,983 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nauval Fathin - Portfolio</title>
+    <title>Nauval Fathin - Networking & Cybersecurity Portfolio</title>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Background Animated Elements -->
+    <div class="bg-animated-elements">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-circle bg-circle-4"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo"><img src="img/WhatsApp Image 2026-01-09 at 21.14.55.jpeg" alt="NF" class="logo-img"></a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="#home" class="logo"><img src="img/WhatsApp Image 2026-01-09 at 21.14.55.jpeg" alt="NF" class="logo-img"></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="particles" id="particles"></div>
-        </div>
-
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Hi, I'm Nauval Fathin</h1>
-                <p class="subtitle">Computer Science Student | Networking & Cybersecurity Enthusiast</p>
-                <p>Focusing on networking fundamentals and cybersecurity at Telkom University. Passionate about building secure and reliable systems while actively contributing to academic communities.</p>
-                <div class="cta-buttons">
-                    <a href="portfolio.html" class="btn btn-primary">View My Work</a>
-                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="profile-card">
-                    <div class="profile-header">
-                        <div class="profile-img">
-                            <div class="profile-img-inner">
-                                <img src="img/WhatsApp Image 2026-01-09 at 21.14.55.jpeg" alt="Nauval Fathin" onerror="this.style.display='none'; this.parentElement.innerHTML='NF';">
-                            </div>
-                        </div>
-                        <h3>Nauval Fathin</h3>
-                        <p style="color: #aaa; font-size: 0.9rem;">Buahbatu, West Java, Indonesia</p>
-                    </div>
-
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Study</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Certifications</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Organizations</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-preview">
-                        <h4 style="margin-bottom: 1rem; color: #fff;">Core Skills</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Networking</span>
-                            <span class="skill-tag">Cybersecurity</span>
-                            <span class="skill-tag">Cloud Computing</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Project Management</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Nauval Fathin</h1>
+            <h2>Networking & Cybersecurity Enthusiast | Computer Science Student</h2>
+            <p>Passionate about securing digital infrastructures and building robust network solutions. With over 3 years of dedicated study in networking and cybersecurity, I am committed to becoming a proficient cybersecurity professional who makes the digital world safer.</p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
         </div>
-
     </section>
 
-    <script src="js/script.js"></script>
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <p class="section-subtitle" data-aos="fade-up">Get to know more about my background and aspirations</p>
+        
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <h3>My Journey</h3>
+                <p>I am currently pursuing my Bachelor's degree in Computer Science at Telkom University in Bandung, Indonesia. My academic journey has been driven by a deep fascination with how networks operate and how we can protect them from ever-evolving cyber threats.</p>
+                
+                <h3>Focus Areas</h3>
+                <ul class="focus-areas">
+                    <li><i class="fas fa-cloud"></i>Cloud Computing</li>
+                    <li><i class="fas fa-shield-alt"></i>Cybersecurity</li>
+                    <li><i class="fas fa-network-wired"></i>Networking</li>
+                </ul>
+
+                <h3>Career Goals</h3>
+                <p>My ultimate goal is to become a proficient cybersecurity professional who can design secure network architectures and implement robust security measures to protect critical infrastructure. I am particularly interested in cloud security, penetration testing, and security operations.</p>
+
+                <h3>Leadership & Involvement</h3>
+                <p>Beyond academics, I have actively participated in various student organizations, taking on leadership roles that have helped me develop strong project management, marketing, and event management skills. These experiences have taught me the importance of teamwork, communication, and strategic thinking.</p>
+            </div>
+
+            <div data-aos="fade-left">
+                <div class="education-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <p class="university">Telkom University</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bandung, Indonesia</p>
+                    <p><i class="fas fa-book"></i> Bachelor's in Computer Science</p>
+                    <p><i class="fas fa-calendar-alt"></i> Expected Graduation: 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+        <p class="section-subtitle" data-aos="fade-up">My expertise across various domains</p>
+        
+        <div class="skills-grid">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-header">
+                    <i class="fas fa-network-wired skill-icon"></i>
+                    <div>
+                        <div class="skill-name">Networking</div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="skill-header">
+                    <i class="fas fa-shield-alt skill-icon"></i>
+                    <div>
+                        <div class="skill-name">Cybersecurity</div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-header">
+                    <i class="fas fa-cloud skill-icon"></i>
+                    <div>
+                        <div class="skill-name">Cloud Computing</div>
+                        <div class="skill-level">Intermediate</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+                <div class="skill-header">
+                    <i class="fab fa-python skill-icon"></i>
+                    <div>
+                        <div class="skill-name">Python</div>
+                        <div class="skill-level">Intermediate</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-header">
+                    <i class="fas fa-tasks skill-icon"></i>
+                    <div>
+                        <div class="skill-name">Project Management</div>
+                        <div class="skill-level">Intermediate</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="350">
+                <div class="skill-header">
+                    <i class="fas fa-users skill-icon"></i>
+                    <div>
+                        <div class="skill-name">Leadership</div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2 class="section-title" data-aos="fade-up">Portfolio</h2>
+        <p class="section-subtitle" data-aos="fade-up">Showcasing my projects and achievements</p>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="project-image">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Network Security Audit Tool</h3>
+                    <p class="project-description">Developed a comprehensive security audit tool that scans network infrastructure for vulnerabilities and generates detailed reports with remediation recommendations.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Networking</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="security-audit">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="150">
+                <div class="project-image">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Cloud Infrastructure Design</h3>
+                    <p class="project-description">Designed and implemented a scalable cloud infrastructure on AWS with emphasis on security best practices, including VPC configuration, IAM policies, and encryption.</p>
+                    <div class="project-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Cloud</span>
+                        <span class="tag">Security</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="cloud-infra">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="project-image">
+                    <i class="fas fa-user-secret"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Penetration Testing Lab</h3>
+                    <p class="project-description">Created a virtualized penetration testing lab environment for ethical hacking practice, featuring vulnerable machines and security challenges.</p>
+                    <div class="project-tags">
+                        <span class="tag">Ethical Hacking</span>
+                        <span class="tag">Kali Linux</span>
+                        <span class="tag">Security</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="pentest-lab">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+                <div class="project-image">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Network Monitoring Dashboard</h3>
+                    <p class="project-description">Built a real-time network monitoring dashboard with Python and React that visualizes network traffic, identifies anomalies, and sends alerts.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Monitoring</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="network-monitoring">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="project-image">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Firewall Configuration</h3>
+                    <p class="project-description">Configured and optimized enterprise-grade firewall rules to protect organizational assets while maintaining operational efficiency.</p>
+                    <div class="project-tags">
+                        <span class="tag">Firewall</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Networking</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="firewall">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="350">
+                <div class="project-image">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Secure Database Design</h3>
+                    <p class="project-description">Designed and implemented a secure database architecture with encryption at rest and in transit, role-based access control, and audit logging.</p>
+                    <div class="project-tags">
+                        <span class="tag">Database</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Encryption</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="database">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="project-image">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Network Proxy Server & QoS Testing</h3>
+                    <p class="project-description">Developed a comprehensive 3-device network testing system with HTTP proxy caching, UDP QoS analysis, and multi-client simulation for network performance evaluation.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">QoS</span>
+                        <span class="tag">Proxy</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="proxy-qos">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="450">
+                <div class="project-image">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Lost & Found Web Application</h3>
+                    <p class="project-description">Full-stack web application for managing lost and found items with Spring Boot REST API, JWT authentication, and responsive frontend interface.</p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JWT</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="lostnfound">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="project-image">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Realshyt Fashion E-Commerce</h3>
+                    <p class="project-description">Modern e-commerce platform for streetwear fashion with React TypeScript frontend, Spring Boot REST API, and comprehensive product management system.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">E-Commerce</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="realshyt">Learn More</button>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="550">
+                <div class="project-image">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Abalone Dataset ML Analysis</h3>
+                    <p class="project-description">Machine learning classification project using KNN and Naive Bayes algorithms to predict abalone age from physical measurements, achieving 82% accuracy.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">KNN</span>
+                        <span class="tag">Data Science</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="abalone-ml">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+        <p class="section-subtitle" data-aos="fade-up">Professional credentials and achievements</p>
+        
+        <div class="certifications-grid">
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-certificate cert-icon"></i>
+                <h3 class="cert-title">A Strategic Approach to Cybersecurity</h3>
+                <p class="cert-issuer">University of Maryland</p>
+                <p class="cert-date">November 2025</p>
+            </div>
+
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="150">
+                <i class="fas fa-shield-alt cert-icon"></i>
+                <h3 class="cert-title">Introduction to Cybersecurity for Business</h3>
+                <p class="cert-issuer">University of Colorado Boulder</p>
+                <p class="cert-date">November 2025</p>
+            </div>
+
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-tasks cert-icon"></i>
+                <h3 class="cert-title">Foundations of Project Management</h3>
+                <p class="cert-issuer">Google</p>
+                <p class="cert-date">December 2025</p>
+            </div>
+
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="250">
+                <i class="fas fa-rocket cert-icon"></i>
+                <h3 class="cert-title">Project Initiation: Starting a Successful Project</h3>
+                <p class="cert-issuer">Google</p>
+                <p class="cert-date">November 2025</p>
+            </div>
+
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="300">
+                <i class="fas fa-language cert-icon"></i>
+                <h3 class="cert-title">IELTS Academic</h3>
+                <p class="cert-issuer">British Council</p>
+                <p class="cert-date">August 2025</p>
+            </div>
+
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="350">
+                <i class="fas fa-globe cert-icon"></i>
+                <h3 class="cert-title">Super Intensive Niveau A2</h3>
+                <p class="cert-issuer">Institut Français Indonesia</p>
+                <p class="cert-date">July 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title" data-aos="fade-up">Experience</h2>
+        <p class="section-subtitle" data-aos="fade-up">My journey through various roles and responsibilities</p>
+        
+        <div class="experience-timeline">
+            <div class="experience-item" data-aos="fade-right">
+                <h3 class="experience-title">Member</h3>
+                <p class="experience-org">PRADA Telkom University</p>
+                <p class="experience-date">Nov 2025 - Present</p>
+                <p class="experience-description">Participating in social and religious university activities that bring together students from various departments, developing organizational and communication skills.</p>
+            </div>
+
+            <div class="experience-item" data-aos="fade-right" data-aos-delay="100">
+                <h3 class="experience-title">Member of Networking Division</h3>
+                <p class="experience-org">Central Computer Improvement Telkom University</p>
+                <p class="experience-date">2024 - Present</p>
+                <p class="experience-description">Participated in internal development sessions related to networking fundamentals. Assisted with documentation and coordination tasks. Engaged in collaborative learning activities.</p>
+            </div>
+
+            <div class="experience-item" data-aos="fade-right" data-aos-delay="200">
+                <h3 class="experience-title">Marketing Coordinator</h3>
+                <p class="experience-org">Grab It Fast 2025</p>
+                <p class="experience-date">2024 - Feb 2025</p>
+                <p class="experience-description">Led marketing planning and campaign distribution. Worked with publication and creative teams. Ensured message consistency and maintained promotional timelines.</p>
+            </div>
+
+            <div class="experience-item" data-aos="fade-right" data-aos-delay="300">
+                <h3 class="experience-title">Licensing Coordinator</h3>
+                <p class="experience-org">CCI Talkshow</p>
+                <p class="experience-date">2024 - Apr 2024</p>
+                <p class="experience-description">Managed all administrative requirements for event approval. Handled communication with campus stakeholders and venue management. Ensured all documents were completed on schedule.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-header" data-aos="fade-up">
+            <div class="contact-badge">
+                <span>Current Focus: Network Security & Cloud</span>
+            </div>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Computer Science Student specializing in Networking & Cybersecurity. Open to collaboration, consulting opportunities, and internships.</p>
+            <div class="availability-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Available for new opportunities</span>
+            </div>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="contact-info-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-info-card">
+                <a href="mailto:Fathinnauval@gmail.com" class="contact-card-link">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <p class="contact-card-label">Email</p>
+                        <p class="contact-card-value">Fathinnauval@gmail.com</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-info-card">
+                <a href="tel:+6281324608025" class="contact-card-link">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <p class="contact-card-label">Phone</p>
+                        <p class="contact-card-value">+6281324608025</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="contact-card-link">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <p class="contact-card-label">Location</p>
+                        <p class="contact-card-value">Telkom University, Bandung</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="contact-card-link">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <p class="contact-card-label">Availability</p>
+                        <p class="contact-card-value">Open for Internships & Collaboration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form and Map -->
+        <div class="contact-main-grid">
+            <div class="contact-form-card" data-aos="fade-right">
+                <h3>Send a Message</h3>
+                <p class="form-description">Fill out the form below and I'll get back to you as soon as possible.</p>
+                
+                <div class="form-success-message" id="formSuccessMessage">
+                    Thank you for your message! I'll respond soon.
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        <span class="form-error">Please enter your name</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        <span class="form-error">Please enter a valid email address</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="internship">Internship</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                        <span class="form-error">Please select a subject</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." rows="5" required></textarea>
+                        <span class="form-error">Please enter your message</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span id="submitText">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </span>
+                        <span id="submitLoading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Sending...
+                        </span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="contact-map-card" data-aos="fade-left">
+                <div class="map-header">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                    <p>Based in Indonesia - Available for remote collaboration worldwide</p>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3358516486547!2d107.62726931477316!3d-6.973402694984584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9adf177bf8d%3A0x437398556f9fa03!2sTelkom%20University!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+                        width="100%"
+                        height="100%"
+                        style="border:0; filter: grayscale(30%) contrast(1.1);"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Location Map">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Links Section -->
+        <div class="social-connect-section" data-aos="fade-up">
+            <h3>Connect With Me</h3>
+            <p>Follow me on social media for updates on projects and cybersecurity insights</p>
+            <div class="social-links-large">
+                <a href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer" class="social-link-large" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/valtheen" target="_blank" rel="noopener noreferrer" class="social-link-large" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://instagram.com/nauvalfatheen" target="_blank" rel="noopener noreferrer" class="social-link-large" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content" id="modalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nauval Fathin. All rights reserved.</p>
+        <div class="social-links" style="justify-content: center;">
+            <a href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/valtheen" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/nauvalfatheen" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Form Validation
+        const contactForm = document.getElementById('contactForm');
+        const formSuccessMessage = document.getElementById('formSuccessMessage');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const submitLoading = document.getElementById('submitLoading');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                // Name validation
+                const nameInput = document.getElementById('name');
+                const nameGroup = nameInput.closest('.form-group');
+                if (nameInput.value.trim() === '') {
+                    nameGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    nameGroup.classList.remove('error');
+                }
+                
+                // Email validation
+                const emailInput = document.getElementById('email');
+                const emailGroup = emailInput.closest('.form-group');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    emailGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    emailGroup.classList.remove('error');
+                }
+                
+                // Subject validation
+                const subjectInput = document.getElementById('subject');
+                const subjectGroup = subjectInput.closest('.form-group');
+                if (!subjectInput.value || subjectInput.value === '') {
+                    subjectGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    subjectGroup.classList.remove('error');
+                }
+                
+                // Message validation
+                const messageInput = document.getElementById('message');
+                const messageGroup = messageInput.closest('.form-group');
+                if (messageInput.value.trim() === '') {
+                    messageGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    messageGroup.classList.remove('error');
+                }
+                
+                if (isValid) {
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitText.style.display = 'none';
+                    submitLoading.style.display = 'inline';
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        // Show success message
+                        formSuccessMessage.style.display = 'block';
+                        contactForm.reset();
+                        
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitText.style.display = 'inline';
+                        submitLoading.style.display = 'none';
+                        
+                        // Hide success message after 3 seconds
+                        setTimeout(() => {
+                            formSuccessMessage.style.display = 'none';
+                        }, 3000);
+                    }, 1500);
+                }
+            });
+
+            // Remove error class on input
+            document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(input => {
+                input.addEventListener('input', () => {
+                    input.closest('.form-group').classList.remove('error');
+                });
+                input.addEventListener('change', () => {
+                    input.closest('.form-group').classList.remove('error');
+                });
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Project Modal Functionality
+        const projectsData = {
+            'security-audit': {
+                title: 'Network Security Audit Tool',
+                icon: '<i class="fas fa-lock"></i>',
+                overview: 'Developed a comprehensive security audit tool that scans network infrastructure for vulnerabilities and generates detailed reports with remediation recommendations.',
+                technologies: ['Python', 'Network Security', 'Vulnerability Scanning', 'Report Generation'],
+                achievements: [
+                    'Automated network vulnerability scanning',
+                    'Generated comprehensive security reports',
+                    'Identified and categorized security threats',
+                    'Provided actionable remediation recommendations'
+                ],
+                learnings: 'Gained deep understanding of network security assessment, vulnerability analysis, and automated security auditing processes.'
+            },
+            'cloud-infra': {
+                title: 'Cloud Infrastructure Design',
+                icon: '<i class="fas fa-server"></i>',
+                overview: 'Designed and implemented a scalable cloud infrastructure on AWS with emphasis on security best practices, including VPC configuration, IAM policies, and encryption.',
+                technologies: ['AWS', 'VPC', 'IAM', 'Cloud Security', 'Infrastructure as Code'],
+                achievements: [
+                    'Designed scalable cloud architecture',
+                    'Implemented security best practices',
+                    'Configured VPC and network security',
+                    'Set up IAM policies and access control'
+                ],
+                learnings: 'Mastered AWS cloud architecture design, security configurations, and infrastructure scalability principles.'
+            },
+            'pentest-lab': {
+                title: 'Penetration Testing Lab',
+                icon: '<i class="fas fa-user-secret"></i>',
+                overview: 'Created a virtualized penetration testing lab environment for ethical hacking practice, featuring vulnerable machines and security challenges.',
+                technologies: ['Kali Linux', 'VirtualBox/VMware', 'Metasploit', 'Wireshark', 'Ethical Hacking'],
+                achievements: [
+                    'Built virtualized testing environment',
+                    'Configured vulnerable machines',
+                    'Created security challenges',
+                    'Documented penetration testing methodologies'
+                ],
+                learnings: 'Developed hands-on experience with ethical hacking tools, vulnerability assessment, and penetration testing techniques.'
+            },
+            'network-monitoring': {
+                title: 'Network Monitoring Dashboard',
+                icon: '<i class="fas fa-code"></i>',
+                overview: 'Built a real-time network monitoring dashboard with Python and React that visualizes network traffic, identifies anomalies, and sends alerts.',
+                technologies: ['Python', 'React', 'Real-time Monitoring', 'Data Visualization', 'Alerting'],
+                achievements: [
+                    'Real-time network traffic visualization',
+                    'Anomaly detection algorithms',
+                    'Automated alert system',
+                    'Interactive dashboard interface'
+                ],
+                learnings: 'Learned real-time data processing, visualization techniques, and building responsive monitoring systems.'
+            },
+            'firewall': {
+                title: 'Firewall Configuration',
+                icon: '<i class="fas fa-fire"></i>',
+                overview: 'Configured and optimized enterprise-grade firewall rules to protect organizational assets while maintaining operational efficiency.',
+                technologies: ['Firewall Management', 'Network Security', 'Rule Optimization', 'Access Control'],
+                achievements: [
+                    'Optimized firewall rule sets',
+                    'Implemented security policies',
+                    'Maintained network performance',
+                    'Documented security configurations'
+                ],
+                learnings: 'Gained expertise in firewall management, security policy implementation, and network protection strategies.'
+            },
+            'database': {
+                title: 'Secure Database Design',
+                icon: '<i class="fas fa-database"></i>',
+                overview: 'Designed and implemented a secure database architecture with encryption at rest and in transit, role-based access control, and audit logging.',
+                technologies: ['Database Design', 'Encryption', 'RBAC', 'Audit Logging', 'Security'],
+                achievements: [
+                    'Implemented encryption at rest and in transit',
+                    'Configured role-based access control',
+                    'Set up comprehensive audit logging',
+                    'Designed secure database schema'
+                ],
+                learnings: 'Mastered database security principles, encryption techniques, and secure database architecture design.'
+            },
+            'proxy-qos': {
+                title: 'Network Proxy Server & QoS Testing',
+                icon: '<i class="fas fa-network-wired"></i>',
+                overview: 'Developed a comprehensive 3-device network testing system with HTTP proxy caching, UDP QoS analysis, and multi-client simulation for network performance evaluation.',
+                technologies: ['Python', 'HTTP Proxy', 'UDP', 'QoS Analysis', 'Network Testing', 'Caching'],
+                achievements: [
+                    'Implemented HTTP proxy with intelligent caching (HIT/MISS)',
+                    'Built UDP QoS testing system (latency, jitter, packet loss)',
+                    'Created multi-client simulation (5 concurrent users)',
+                    'Developed comprehensive network performance metrics',
+                    'Integrated Wireshark packet analysis'
+                ],
+                learnings: 'Gained deep understanding of HTTP protocol, proxy architecture, QoS metrics, network performance analysis, and multi-threaded socket programming in Python.'
+            },
+            'lostnfound': {
+                title: 'Lost & Found Web Application',
+                icon: '<i class="fas fa-search"></i>',
+                overview: 'Full-stack web application for managing lost and found items with Spring Boot REST API, JWT authentication, and responsive frontend interface.',
+                technologies: ['Java 21', 'Spring Boot 3.5.6', 'MySQL', 'JWT Authentication', 'Spring Security', 'RESTful API', 'JavaScript'],
+                achievements: [
+                    'Built complete RESTful API with Spring Boot',
+                    'Implemented JWT-based authentication and authorization',
+                    'Created responsive frontend with vanilla JavaScript',
+                    'Developed file upload system for item images',
+                    'Designed secure user management system'
+                ],
+                learnings: 'Mastered Spring Boot framework, JWT authentication, RESTful API design, full-stack development, and secure web application architecture.'
+            },
+            'realshyt': {
+                title: 'Realshyt Fashion E-Commerce',
+                icon: '<i class="fas fa-shopping-bag"></i>',
+                overview: 'Modern e-commerce platform for streetwear fashion with React TypeScript frontend, Spring Boot REST API, and comprehensive product management system.',
+                technologies: ['React 19', 'TypeScript', 'Spring Boot 3.5.7', 'Tailwind CSS', 'Spring Data JPA', 'H2/MySQL', 'Gradle'],
+                achievements: [
+                    'Built modern React TypeScript frontend with Tailwind CSS',
+                    'Developed Spring Boot REST API with JPA',
+                    'Created comprehensive product management system',
+                    'Implemented shopping cart functionality',
+                    'Built admin panel for product administration',
+                    'Designed responsive mobile-first UI'
+                ],
+                learnings: 'Gained expertise in React with TypeScript, Spring Boot REST API development, modern UI/UX design with Tailwind CSS, and full-stack e-commerce application architecture.'
+            },
+            'abalone-ml': {
+                title: 'Abalone Dataset ML Analysis',
+                icon: '<i class="fas fa-brain"></i>',
+                overview: 'Machine learning classification project using KNN and Naive Bayes algorithms to predict abalone age from physical measurements, achieving 82% accuracy.',
+                technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'KNN', 'Naive Bayes', 'Jupyter Notebook'],
+                achievements: [
+                    'Achieved 82% accuracy in age prediction',
+                    'Implemented comprehensive data preprocessing pipeline',
+                    'Performed comparative analysis of multiple ML algorithms',
+                    'Created detailed data visualizations and EDA',
+                    'Analyzed 4,177 samples with multiple features'
+                ],
+                learnings: 'Mastered machine learning workflow, data preprocessing, feature engineering, algorithm implementation and tuning, model evaluation, and data visualization techniques.'
+            }
+        };
+
+        // Open modal function
+        function openProjectModal(projectId) {
+            const project = projectsData[projectId];
+            if (!project) return;
+
+            const modal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modalContent');
+
+            if (!modal || !modalContent) return;
+
+            // Build modal content
+            modalContent.innerHTML = `
+                <div class="modal-header">
+                    <div class="modal-icon">${project.icon}</div>
+                    <h2>${project.title}</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section">
+                        <h3><i class="fas fa-info-circle"></i> Overview</h3>
+                        <p>${project.overview}</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3><i class="fas fa-tools"></i> Technologies</h3>
+                        <div class="modal-tags">
+                            ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="modal-section">
+                        <h3><i class="fas fa-trophy"></i> Key Achievements</h3>
+                        <ul class="modal-list">
+                            ${project.achievements.map(achievement => `<li><i class="fas fa-check-circle"></i> ${achievement}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3><i class="fas fa-lightbulb"></i> Learning Outcomes</h3>
+                        <p>${project.learnings}</p>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal function
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Learn More buttons
+            document.querySelectorAll('.learn-more-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectId = btn.getAttribute('data-project');
+                    if (projectId) {
+                        openProjectModal(projectId);
+                    }
+                });
+            });
+
+            // Close button
+            const closeBtn = document.getElementById('modalClose');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeProjectModal);
+            }
+
+            // Close on overlay click
+            const modal = document.getElementById('projectModal');
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('modal-overlay') || e.target.id === 'projectModal') {
+                        closeProjectModal();
+                    }
+                });
+            }
+
+            // Close on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeProjectModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
