@@ -2169,7 +2169,9 @@ footer {
 
 @media (max-width: 768px) {
     .mobile-menu-toggle {
-        display: flex;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .nav-links {
@@ -2186,6 +2188,7 @@ footer {
         transition: transform 0.3s ease;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         z-index: 1000;
+        display: flex;
     }
 
     .nav-links.active {
