@@ -48,6 +48,10 @@ nav {
     nav {
         padding: 1rem 3%;
     }
+
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
 }
 
 nav.scrolled {
@@ -1992,6 +1996,10 @@ footer {
 @media (max-width: 768px) {
     nav {
         padding: 1rem 5%;
+    }
+
+    .mobile-menu-toggle {
+        display: flex !important;
     }
 
     .nav-links {
