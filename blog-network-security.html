@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Getting Started with Network Security - Fundamental network security concepts, firewall configuration, IDS/IPS, and best practices for protecting network infrastructure.">
+    <meta name="keywords" content="Network Security, Cybersecurity, Firewall, IDS, IPS, Network Protection, Security Best Practices">
+    <meta name="author" content="Nauval Fathin">
+    <meta property="og:title" content="Getting Started with Network Security - Nauval Fathin">
+    <meta property="og:description" content="Fundamental network security concepts and best practices for beginners">
+    <meta property="og:type" content="article">
+    <title>Getting Started with Network Security - Nauval Fathin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="img/WhatsApp Image 2026-01-09 at 21.14.55.jpeg" alt="NF" class="logo-img"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="blog-hero-content">
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+            <div class="blog-date">January 9, 2026</div>
+            <h1>Getting Started with Network Security</h1>
+            <p class="blog-subtitle">Fundamental network security concepts and best practices for protecting your infrastructure</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-detail-section">
+        <div class="blog-detail-container">
+            <article class="blog-article">
+                <div class="blog-intro">
+                    <p class="lead">Network security is a fundamental pillar in the cybersecurity world. In an increasingly complex digital era, protecting network infrastructure from various threats has become a top priority for every organization and individual working with technology.</p>
+                </div>
+
+                <h2>Why is Network Security Important?</h2>
+                <p>Modern computer networks face various threats, from malware attacks and phishing to advanced persistent threats (APT). Without adequate protection, sensitive data, critical systems, and user privacy can be compromised. Network security is not just about preventing attacks, but also about building resilient systems that can recover quickly if an incident occurs.</p>
+
+                <h2>Fundamental Network Security Concepts</h2>
+                
+                <h3>1. Firewall Configuration</h3>
+                <p>A firewall is the first line of defense in network security. Firewalls function as filters that control network traffic based on established security rules. There are several types of firewalls:</p>
+                <ul>
+                    <li><strong>Packet Filtering Firewall:</strong> Examines packet headers to determine whether packets are allowed or blocked</li>
+                    <li><strong>Stateful Inspection Firewall:</strong> Monitors active connection states and makes decisions based on connection context</li>
+                    <li><strong>Application Layer Firewall:</strong> Examines application content to detect more complex threats</li>
+                    <li><strong>Next-Generation Firewall (NGFW):</strong> Combines traditional firewall features with intrusion prevention, deep packet inspection, and threat intelligence</li>
+                </ul>
+
+                <h3>2. Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)</h3>
+                <p>IDS and IPS are systems designed to detect and prevent suspicious activities within a network:</p>
+                <ul>
+                    <li><strong>IDS (Intrusion Detection System):</strong> Monitors network traffic and identifies suspicious activities, then sends alerts to administrators</li>
+                    <li><strong>IPS (Intrusion Prevention System):</strong> Not only detects but also actively blocks detected threats</li>
+                    <li><strong>Network-based IDS/IPS:</strong> Monitors traffic across the entire network</li>
+                    <li><strong>Host-based IDS/IPS:</strong> Monitors activities on specific hosts or servers</li>
+                </ul>
+
+                <h3>3. Network Segmentation</h3>
+                <p>Network segmentation is the practice of dividing a network into smaller, isolated subnets. This helps limit the impact of attacks if a breach occurs:</p>
+                <ul>
+                    <li><strong>VLAN (Virtual LAN):</strong> Divides the network logically without requiring additional physical devices</li>
+                    <li><strong>DMZ (Demilitarized Zone):</strong> A separate area for servers that need to be accessed from the internet</li>
+                    <li><strong>Micro-segmentation:</strong> Divides the network into very small segments for more granular control</li>
+                </ul>
+
+                <h3>4. Access Control</h3>
+                <p>Access control ensures that only authorized users can access network resources:</p>
+                <ul>
+                    <li><strong>Network Access Control (NAC):</strong> Verifies and controls devices attempting to connect to the network</li>
+                    <li><strong>Role-Based Access Control (RBAC):</strong> Grants access based on user roles within the organization</li>
+                    <li><strong>Multi-Factor Authentication (MFA):</strong> Adds an additional security layer by requiring more than one authentication method</li>
+                </ul>
+
+                <h3>5. Security Policies</h3>
+                <p>Security policies are formal documentation that governs how an organization protects its information assets:</p>
+                <ul>
+                    <li><strong>Acceptable Use Policy:</strong> Establishes rules for using network resources</li>
+                    <li><strong>Password Policy:</strong> Defines requirements for strong passwords</li>
+                    <li><strong>Incident Response Policy:</strong> Establishes procedures for handling security incidents</li>
+                    <li><strong>Network Security Policy:</strong> Governs the configuration and maintenance of network devices</li>
+                </ul>
+
+                <h2>Best Practices for Network Security</h2>
+                
+                <h3>1. Defense in Depth</h3>
+                <p>Don't rely on a single security layer. Implement multiple layers of defense, including firewalls, IDS/IPS, antivirus, and security awareness training.</p>
+
+                <h3>2. Regular Updates and Patching</h3>
+                <p>Ensure all network devices, operating systems, and applications are always updated with the latest security patches. Many attacks exploit known vulnerabilities that haven't been patched.</p>
+
+                <h3>3. Network Monitoring</h3>
+                <p>Implement continuous monitoring to detect anomalies and threats in real-time. Use tools such as SIEM (Security Information and Event Management) for log aggregation and analysis.</p>
+
+                <h3>4. Encryption</h3>
+                <p>Use encryption to protect data in transit (such as VPN, TLS/SSL) and data at rest. This ensures that even if data is intercepted, it cannot be read without the encryption key.</p>
+
+                <h3>5. Regular Security Audits</h3>
+                <p>Conduct regular security audits to identify vulnerabilities and ensure compliance with security policies. This can be done through penetration testing or vulnerability assessments.</p>
+
+                <h2>Conclusion</h2>
+                <p>Network security is an ongoing journey, not a final destination. By understanding fundamental concepts and implementing best practices, you can build more secure and resilient network infrastructure. Remember that security is about finding the balance between protection and usability.</p>
+
+                <p>For beginners, start by understanding basic firewall and access control concepts, then gradually learn more advanced technologies such as IDS/IPS and network segmentation. Practice your knowledge in a safe lab environment before implementing it in production.</p>
+
+                <div class="blog-tags">
+                    <span class="tag">Network Security</span>
+                    <span class="tag">Cybersecurity</span>
+                    <span class="tag">Firewall</span>
+                    <span class="tag">IDS/IPS</span>
+                    <span class="tag">Network Protection</span>
+                </div>
+
+                <div class="blog-share">
+                    <h3>Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=" class="share-btn">LinkedIn</a>
+                        <a href="https://twitter.com/intent/tweet?text=" class="share-btn">Twitter</a>
+                        <a href="mailto:?subject=Getting Started with Network Security" class="share-btn">Email</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="content-section">
+        <h2 class="section-title">Related Articles</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">🔐</div>
+                <div class="blog-content">
+                    <div class="blog-date">Coming Soon</div>
+                    <h3>Cloud Computing: A Beginner's Guide</h3>
+                    <p>Exploring the basics of cloud computing, its benefits, and how to get started with cloud platforms.</p>
+                    <a href="#" class="blog-link">Read More →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🌐</div>
+                <div class="blog-content">
+                    <div class="blog-date">Coming Soon</div>
+                    <h3>Python for Network Automation</h3>
+                    <p>Learn how to automate network tasks using Python and popular networking libraries.</p>
+                    <a href="#" class="blog-link">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nauval Fathin. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

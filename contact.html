@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Nauval Fathin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="img/WhatsApp Image 2026-01-09 at 21.14.55.jpeg" alt="NF" class="logo-img"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Get In Touch</h1>
+        <p>Let's discuss your next project or just have a chat about technology</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Let's Connect</h2>
+                <p>I'm always interested in hearing about new opportunities, projects, and collaborations. Whether you have a question or just want to say hi, feel free to reach out!</p>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:Fathinnauval@gmail.com">Fathinnauval@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+6281324608025</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p>Buahbatu, West Java, Indonesia</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">💼</div>
+                        <div class="info-content">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer">Connect with me</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1rem; color: #fff;">Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">💼</a>
+                    <a href="https://github.com/valtheen" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">💻</a>
+                    <a href="https://instagram.com/nauvalfatheen" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">📷</a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <div class="success-message" id="successMessage">
+                    ✓ Thank you! Your message has been sent successfully. I'll get back to you soon!
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <span class="error-message" id="nameError">Please enter your name</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email *</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <span class="error-message" id="emailError">Please enter a valid email</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required>
+                        <span class="error-message" id="subjectError">Please enter a subject</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
+                        <span class="error-message" id="messageError">Please enter your message</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="contact-section location-section">
+        <h1 class="location-page-title">Where I'm Based</h1>
+
+        <!-- Content Card -->
+        <div class="location-content-card">
+            <h2>Telkom University</h2>
+            <p>
+                I'm currently studying at <span class="highlight-text">Telkom University</span> in Bandung, West Java, Indonesia. 
+                The university is located in the Buahbatu area, known for its vibrant tech community and innovative educational environment.
+            </p>
+            <p>
+                Available for on-site collaborations in Bandung and remote projects worldwide.
+            </p>
+        </div>
+
+        <!-- Map Section -->
+        <div class="location-map-section">
+            <div class="location-map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3358516486547!2d107.62726931477316!3d-6.973402694984584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9adf177bf8d%3A0x437398556f9fa03!2sTelkom%20University!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <a href="https://www.google.com/maps/place/Telkom+University" target="_blank" rel="noopener noreferrer" class="location-map-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Open in Google Maps
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nauval Fathin. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
