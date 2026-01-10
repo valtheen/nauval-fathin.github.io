@@ -177,20 +177,14 @@ nav.scrolled {
    Hero Section (Home Page)
    ============================================ */
 .hero {
-    min-height: auto;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: visible;
-    padding: 120px 5% 40px;
-}
-
-@media (min-width: 1025px) {
-    .hero {
-        padding: 150px 5% 50px;
-        min-height: auto;
-    }
+    overflow: hidden;
+    padding: 0 5%;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
