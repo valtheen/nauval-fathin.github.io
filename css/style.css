@@ -51,6 +51,8 @@ nav {
 
     .mobile-menu-toggle {
         display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 }
 
@@ -104,6 +106,8 @@ nav.scrolled {
     padding: 0.5rem;
     gap: 4px;
     z-index: 1001;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-menu-toggle span {
@@ -112,6 +116,7 @@ nav.scrolled {
     background: #fff;
     border-radius: 2px;
     transition: all 0.3s ease;
+    display: block;
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
