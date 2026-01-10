@@ -247,17 +247,42 @@ nav.scrolled {
 }
 
 @media (min-width: 1025px) {
+    .hero {
+        padding: 0 8%;
+    }
+
     .hero-content {
         gap: 5rem;
+        max-width: 1400px;
     }
 
     .hero-text {
         text-align: left;
-        padding-right: 2rem;
+        padding-right: 1rem;
     }
 
     .hero-visual {
-        padding-left: 2rem;
+        padding-left: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-text .subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+    }
+
+    .profile-card {
+        padding: 2.5rem;
     }
 }
 
