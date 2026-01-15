@@ -466,6 +466,23 @@
                     <button class="btn btn-secondary learn-more-btn" data-project="bebersih">Learn More</button>
                 </div>
             </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="750">
+                <div class="project-image">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Network Monitoring Dashboard</h3>
+                    <p class="project-description">Built a comprehensive real-time network monitoring dashboard with FastAPI backend and React TypeScript frontend. Features WebSocket-based real-time updates, bandwidth tracking, latency monitoring, server status monitoring, automatic alert system, and historical data analytics with interactive charts.</p>
+                    <div class="project-tags">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">WebSocket</span>
+                    </div>
+                    <button class="btn btn-secondary learn-more-btn" data-project="network-monitoring">Learn More</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1065,6 +1082,30 @@
                     'Created wallet system with withdrawal functionality for cleaners'
                 ],
                 learnings: 'Gained extensive experience in building full-stack React applications with TypeScript, implementing complex state management, multi-role authentication systems, payment processing workflows, real-time communication features, and comprehensive admin dashboards. Learned to design scalable component architectures and implement modern UI/UX patterns with Tailwind CSS.'
+            },
+            'network-monitoring': {
+                title: 'Network Monitoring Dashboard',
+                icon: '<i class="fas fa-network-wired"></i>',
+                overview: 'Built a comprehensive real-time network monitoring dashboard with FastAPI backend and React TypeScript frontend. The system provides WebSocket-based real-time updates for network metrics, bandwidth tracking, latency monitoring, server status monitoring (CPU, memory, uptime), automatic alert system with threshold-based anomaly detection, and historical data analytics with interactive charts for different time periods (1h, 24h, 7d, 30d).',
+                technologies: ['FastAPI', 'Python', 'React 18', 'TypeScript', 'SQLAlchemy', 'SQLite/PostgreSQL', 'WebSocket', 'Vite', 'Tailwind CSS', 'Recharts', 'psutil', 'asyncio'],
+                achievements: [
+                    'Developed full-stack monitoring system with FastAPI backend and React TypeScript frontend',
+                    'Implemented WebSocket-based real-time communication for live metric updates every 10 seconds',
+                    'Built hybrid monitoring system combining real monitoring (ping, bandwidth, CPU/memory) with fallback to simulated data',
+                    'Created comprehensive server management system with add/remove functionality via REST API',
+                    'Implemented automatic alert system with configurable thresholds (CPU: 70%/90%, Memory: 70%/90%, Latency: 50ms/100ms)',
+                    'Developed historical data analytics with time range selection (1h, 24h, 7d, 30d)',
+                    'Built bandwidth tracking system with upload/download speed monitoring',
+                    'Created latency monitoring using ping-based measurement with multiple attempts for accuracy',
+                    'Implemented server status monitoring for CPU, memory, and uptime metrics',
+                    'Developed traffic distribution analysis with visual charts',
+                    'Created data export functionality (CSV/JSON) for reporting and analysis',
+                    'Designed scalable architecture with background monitoring tasks using asyncio for concurrent operations',
+                    'Built responsive dashboard UI with interactive charts using Recharts',
+                    'Implemented error handling and auto-reconnect mechanism for WebSocket connections'
+                ],
+                learnings: 'Mastered full-stack development with FastAPI and React, learned WebSocket implementation for real-time systems, gained expertise in network monitoring concepts, async programming with Python asyncio for concurrent operations, database design for time-series data, RESTful API design with proper error handling, and building production-ready monitoring systems. Developed understanding of network infrastructure, real-time communication patterns, and scalable system architecture.',
+                github: 'https://github.com/valtheen/network-monitoring-dashboard'
             }
         };
 
@@ -1105,6 +1146,14 @@
                         <h3><i class="fas fa-lightbulb"></i> Learning Outcomes</h3>
                         <p>${project.learnings}</p>
                     </div>
+                    ${project.github ? `
+                    <div class="modal-section">
+                        <h3><i class="fab fa-github"></i> GitHub Repository</h3>
+                        <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                    ` : ''}
                 </div>
             `;
 
