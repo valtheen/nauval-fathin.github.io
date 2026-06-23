@@ -135,7 +135,8 @@ section{position:relative;padding:120px 0;z-index:2}
 
 /* projects */
 .proj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-.card{position:relative;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--ink-2));overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;display:flex;flex-direction:column;min-height:260px}
+.card{position:relative;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--ink-2));overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;display:flex;flex-direction:column;min-height:260px;text-decoration:none;color:inherit}
+a.card{cursor:pointer}
 .card:hover{border-color:var(--line-2);transform:translateY(-5px);box-shadow:0 24px 50px -24px rgba(0,0,0,.7)}
 .card::before{content:'';position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),var(--glow-e),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
 .card.v::before{background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),var(--glow-v),transparent 60%)}
@@ -291,7 +292,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
 <section id="work">
   <div class="sec-head reveal">
     <div><div class="sec-index">02 / work</div><h2 class="sec-title">Selected <span class="ital">projects</span></h2></div>
-    <p class="sec-note">// nine builds, sorted by how much I'd want to talk about them in an interview</p>
+    <p class="sec-note">// click a card to open the repo on GitHub</p>
   </div>
   <div class="proj-grid">
 
@@ -312,7 +313,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </article>
 
-    <article class="card third v reveal" data-card>
+    <a href="https://github.com/rzkisptraa/TubesAI_AbaloneDataset" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card aria-label="Abalone age prediction on GitHub">
       <div class="card-body">
         <div class="card-kicker">Machine Learning</div>
         <div class="card-metric">82<span class="u">%</span></div>
@@ -321,9 +322,9 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
         <div class="card-tags"><span>Scikit-learn</span><span>PySpark</span><span>Python</span></div>
       </div>
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
-    </article>
+    </a>
 
-    <article class="card half reveal" data-card>
+    <a href="https://github.com/valtheen/Covid-Data-Project" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card aria-label="COVID-19 global data analysis on GitHub">
       <div class="card-body">
         <div class="card-kicker">Data Analytics &middot; EDA</div>
         <h3>COVID-19 global data analysis</h3>
@@ -331,28 +332,27 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
         <div class="card-tags"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Statistics</span></div>
       </div>
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
-    </article>
+    </a>
 
-    <article class="card half reveal" data-card>
+    <a href="https://github.com/valtheen/network-monitoring-dashboard" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card aria-label="Network Monitoring Dashboard on GitHub">
       <div class="card-body">
-        <div class="card-kicker">Analytics Dashboard &middot; SQL</div>
-        <h3>Marketing campaign analytics</h3>
-        <p>KPI dashboards for Grabitfast Telkom campaigns — SQL-based segmentation, pandas EDA and weekly performance reports that pushed CTR and conversion optimization.</p>
-        <div class="card-tags"><span>SQL</span><span>Python</span><span>Pandas</span><span>Excel</span><span>Dashboard</span></div>
+        <div class="card-kicker">Full-stack &middot; Real-time</div>
+        <h3>Network Monitoring Dashboard</h3>
+        <p>Real-time network performance dashboard with FastAPI backend and React TypeScript frontend — WebSocket updates, bandwidth/latency tracking, server health and alert system.</p>
+        <div class="card-tags"><span>FastAPI</span><span>React</span><span>TypeScript</span><span>WebSocket</span></div>
       </div>
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
-    </article>
+    </a>
 
-    <article class="card third v reveal" data-card>
+    <a href="https://github.com/Hazjel/New-York-City-Taxi-Fare-Prediction" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card aria-label="NYC Taxi Fare Prediction on GitHub">
       <div class="card-body">
-        <div class="card-kicker">Network Science</div>
-        <div class="card-metric">55<span class="u" style="font-size:.42em"> comm</span></div>
-        <h3>DBLP collaboration network</h3>
-        <p>Centrality, Louvain community detection (55 communities) and ICM diffusion simulation on a co-authorship graph.</p>
-        <div class="card-tags"><span>NetworkX</span><span>Louvain</span><span>Python</span></div>
+        <div class="card-kicker">Big Data &middot; PySpark</div>
+        <h3>NYC Taxi Fare Prediction</h3>
+        <p>Large-scale fare prediction pipeline on NYC taxi trip data using PySpark — feature engineering, distributed preprocessing and model training built for volume.</p>
+        <div class="card-tags"><span>PySpark</span><span>Python</span><span>Jupyter</span></div>
       </div>
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
-    </article>
+    </a>
 
     <article class="card third reveal" data-card>
       <div class="card-body">
@@ -365,25 +365,25 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </article>
 
-    <article class="card third reveal" data-card>
+    <a href="https://github.com/valtheen/LostnFound" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card aria-label="LostnFound on GitHub">
       <div class="card-body">
-        <div class="card-kicker">Mobile &middot; Full-stack</div>
-        <h3>EcoTrash</h3>
-        <p>Waste-selling &amp; recycling platform — Flutter app on a Laravel REST API. Order lifecycle, wallet/withdrawal, couriers, reviews and notifications.</p>
-        <div class="card-tags"><span>Flutter</span><span>Laravel</span><span>REST API</span></div>
+        <div class="card-kicker">Full-stack &middot; Spring Boot</div>
+        <h3>LostnFound</h3>
+        <p>Lost &amp; found management platform — Spring Boot REST API with JWT auth, MySQL database, image uploads and a responsive vanilla JavaScript frontend.</p>
+        <div class="card-tags"><span>Spring Boot</span><span>Java</span><span>MySQL</span><span>JWT</span></div>
       </div>
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
-    </article>
+    </a>
 
-    <article class="card third reveal" data-card>
+    <a href="https://github.com/valtheen/bebersih" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card aria-label="BEBERSIH on GitHub">
       <div class="card-body">
         <div class="card-kicker">Web App &middot; Analytics</div>
         <h3>BEBERSIH — Clean Living Platform</h3>
         <p>On-demand cleaning platform: multi-role system, real-time booking, payment wallet, and an admin revenue analytics dashboard with interactive charts.</p>
-        <div class="card-tags"><span>Web App</span><span>Analytics</span><span>Dashboard</span></div>
+        <div class="card-tags"><span>React</span><span>TypeScript</span><span>Analytics</span><span>Dashboard</span></div>
       </div>
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
-    </article>
+    </a>
 
     <article class="card third reveal" data-card>
       <div class="card-body">
