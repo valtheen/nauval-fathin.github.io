@@ -137,34 +137,94 @@ section{position:relative;padding:120px 0;z-index:2}
 .chip{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--bone);border:1px solid var(--line);border-radius:100px;padding:8px 15px;transition:.25s;background:var(--ink-2)}
 .chip:hover{border-color:var(--emerald);color:var(--emerald);transform:translateY(-2px)}
 
-/* optional portfolio route */
-.route-quest{padding:42px 0 88px}
-.quest-shell{border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,rgba(13,21,25,.96),rgba(8,13,17,.94));display:grid;grid-template-columns:.85fr 1.15fr;overflow:hidden;position:relative}
-.quest-shell::before{content:'';position:absolute;width:340px;height:340px;border-radius:50%;left:-170px;top:-180px;background:radial-gradient(circle,var(--glow-e),transparent 68%);pointer-events:none}
-.quest-copy{padding:42px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
-.quest-kicker{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--emerald);text-transform:uppercase;margin-bottom:18px}
-.quest-copy h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.03;letter-spacing:-.02em}
-.quest-copy h2 em{font-weight:400;color:var(--violet)}
-.quest-copy p{color:var(--fog);font-size:14.5px;line-height:1.65;margin-top:18px;max-width:390px}
-.quest-console{margin:18px;border:1px solid var(--line-2);border-radius:12px;background:rgba(5,8,10,.7);padding:28px;position:relative;z-index:1}
-.quest-status{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding-bottom:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fog)}
-.quest-status span:first-child{color:var(--emerald)}
-.quest-prompt{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bone);margin:22px 0 14px}
-.quest-options{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.quest-option{min-height:78px;border:1px solid var(--line);border-radius:9px;background:var(--ink-2);color:var(--fog);font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.35;text-align:left;padding:14px;cursor:pointer;transition:.25s}
-.quest-option::before{content:attr(data-key);display:block;font-family:'JetBrains Mono',monospace;color:var(--emerald);font-size:9px;letter-spacing:.14em;margin-bottom:7px}
-.quest-option:hover,.quest-option[aria-pressed="true"]{border-color:var(--emerald);color:var(--bone);background:var(--glow-e);transform:translateY(-2px)}
-.quest-result{margin-top:18px;padding:20px;border:1px dashed var(--line-2);border-radius:9px;transition:border-color .3s,background .3s}
-.quest-result.is-active{border-style:solid;border-color:rgba(169,139,255,.55);background:var(--glow-v)}
-.quest-signal{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--violet);text-transform:uppercase}
-.quest-result h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;margin:7px 0 5px}
-.quest-result p{font-size:13.5px;line-height:1.55;color:var(--fog)}
-.quest-link{display:inline-flex;margin-top:12px;color:var(--emerald);font-family:'JetBrains Mono',monospace;font-size:11px;text-decoration:none;letter-spacing:.04em}
-.quest-link:hover{text-decoration:underline;text-underline-offset:4px}
+/* portfolio signal engine */
+.route-quest{padding:42px 0 96px}
+.signal-engine{border:1px solid var(--line-2);border-radius:18px;background:linear-gradient(145deg,rgba(10,18,21,.98),rgba(6,9,13,.98));overflow:hidden;position:relative;box-shadow:0 34px 100px -55px rgba(44,230,168,.35)}
+.signal-engine::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at 8% 8%,rgba(44,230,168,.11),transparent 62%),radial-gradient(560px circle at 94% 92%,rgba(169,139,255,.11),transparent 64%)}
+.engine-head{padding:34px 38px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:30px;position:relative;z-index:1}
+.engine-kicker{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--emerald);text-transform:uppercase;margin-bottom:12px}
+.engine-head h2{font-family:'Fraunces',serif;font-size:clamp(30px,4.1vw,50px);font-weight:600;line-height:1;letter-spacing:-.02em}
+.engine-head h2 em{font-weight:400;color:var(--violet)}
+.engine-head p{max-width:600px;color:var(--fog);font-size:14px;line-height:1.6;margin-top:12px}
+.engine-meta{min-width:190px;display:flex;flex-direction:column;align-items:flex-end;gap:7px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--fog)}
+.engine-meta span:first-child{color:var(--bone)}
+.engine-meta i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--emerald);box-shadow:0 0 10px var(--emerald);margin-right:6px;animation:pulse 2s infinite}
+.engine-meta a{color:var(--emerald);text-decoration:none}
+.engine-meta a:hover{text-decoration:underline;text-underline-offset:4px}
+.engine-grid{display:grid;grid-template-columns:.9fr 1.1fr;min-height:650px;position:relative;z-index:1}
+.signal-map{border-right:1px solid var(--line);padding:26px 32px 28px;background:linear-gradient(160deg,rgba(44,230,168,.035),transparent 55%);display:flex;flex-direction:column}
+.map-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--fog)}
+.map-topline span:first-child{color:var(--emerald)}
+.radar-wrap{position:relative;width:min(100%,430px);aspect-ratio:1;margin:2px auto -8px}
+.signal-radar{display:block;width:100%;height:100%;overflow:visible}
+.radar-halo{fill:url(#radarGlow)}
+.radar-grid{fill:none;stroke:rgba(130,152,160,.2);stroke-width:1}
+.signal-polygon{fill:url(#radarFill);stroke:var(--emerald);stroke-width:2;filter:drop-shadow(0 0 10px rgba(44,230,168,.26));transition:points .55s cubic-bezier(.16,1,.3,1)}
+.project-nodes circle{fill:#0c1719;stroke:var(--line-2);stroke-width:2;transition:.4s}
+.project-nodes text{fill:var(--fog);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;transition:.4s}
+.project-nodes g.is-hot circle{fill:var(--emerald);stroke:var(--bone);filter:drop-shadow(0 0 9px var(--emerald))}
+.project-nodes g.is-hot text{fill:var(--bone)}
+.project-nodes g.is-warm circle{stroke:var(--violet);fill:rgba(169,139,255,.35)}
+.radar-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:22px;border:1px solid var(--line-2);background:rgba(5,8,10,.9);display:grid;place-items:center;box-shadow:0 0 35px rgba(44,230,168,.1)}
+.radar-core img{width:38px;height:38px}
+.radar-core span{position:absolute;bottom:-20px;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.18em;color:var(--emerald)}
+.signal-bars{display:grid;gap:10px;margin-top:auto}
+.signal-bars>div{display:grid;grid-template-columns:84px 1fr 28px;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--fog)}
+.signal-bars b{height:4px;background:var(--line);border-radius:5px;overflow:hidden}
+.signal-bars b i{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--emerald),var(--teal));transition:width .55s cubic-bezier(.16,1,.3,1)}
+.signal-bars>div:nth-child(2) b i{background:linear-gradient(90deg,var(--violet),var(--violet-hot))}
+.signal-bars output{text-align:right;color:var(--bone)}
+.scan-log{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;display:flex;gap:10px;align-items:center;color:var(--fog);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.05em}
+.scan-pulse{width:8px;height:8px;border-radius:50%;border:1px solid var(--emerald);position:relative;flex:0 0 auto}
+.scan-pulse::after{content:'';position:absolute;inset:-4px;border:1px solid rgba(44,230,168,.35);border-radius:50%;animation:pulse 1.6s infinite}
+.engine-console{padding:30px 34px;display:flex;flex-direction:column;min-width:0}
+.engine-progress{display:grid;grid-template-columns:auto 1fr auto;gap:15px;align-items:center;padding-bottom:22px;border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--emerald)}
+.progress-track{height:3px;background:var(--line);border-radius:5px;overflow:hidden}
+.progress-track i{display:block;width:33.333%;height:100%;background:linear-gradient(90deg,var(--emerald),var(--violet));transition:width .45s cubic-bezier(.16,1,.3,1)}
+.progress-dots{display:flex;gap:6px}
+.progress-dots span{width:7px;height:7px;border-radius:50%;border:1px solid var(--line-2);transition:.3s}
+.progress-dots span.is-active{background:var(--emerald);border-color:var(--emerald);box-shadow:0 0 9px rgba(44,230,168,.65)}
+.progress-dots span.is-done{background:var(--violet);border-color:var(--violet)}
+.engine-question{display:grid;grid-template-columns:58px 1fr;gap:18px;padding:34px 0 22px}
+.engine-question[hidden]{display:none}
+.question-index{font-family:'Fraunces',serif;font-size:48px;line-height:.85;color:transparent;-webkit-text-stroke:1px var(--line-2)}
+.question-copy>span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.16em;color:var(--violet);text-transform:uppercase}
+.question-copy h3{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(25px,3vw,34px);line-height:1.08;margin:8px 0}
+.question-copy p{color:var(--fog);font-size:13.5px;line-height:1.55}
+.engine-options{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:9px}
+.engine-option{min-height:104px;border:1px solid var(--line);border-radius:10px;background:rgba(10,16,19,.8);color:var(--bone);text-align:left;padding:17px;cursor:pointer;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-content:start;transition:border-color .25s,background .25s,transform .25s}
+.engine-option:last-child:nth-child(odd){grid-column:1/-1;min-height:90px}
+.engine-option>span{grid-row:1/3;font-family:'JetBrains Mono',monospace;color:var(--emerald);font-size:9px;letter-spacing:.12em;padding-top:2px}
+.engine-option strong{font-size:14px;font-weight:500}
+.engine-option small{font-size:11.5px;color:var(--fog);line-height:1.4;margin-top:6px}
+.engine-option:hover,.engine-option:focus-visible,.engine-option[aria-pressed="true"]{border-color:var(--emerald);background:var(--glow-e);transform:translateY(-2px)}
+.engine-option[aria-pressed="true"]{box-shadow:inset 0 0 0 1px rgba(44,230,168,.35)}
+.engine-result{padding:30px 0 20px;animation:fadeUp .45s ease both}
+.engine-result[hidden]{display:none}
+.result-heading{display:flex;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet)}
+.result-heading strong{color:var(--emerald);font-weight:500}
+.engine-result>h3{font-family:'Fraunces',serif;font-size:clamp(28px,3.3vw,40px);font-weight:500;line-height:1.05;margin:14px 0 9px}
+.engine-result>p{color:var(--fog);font-size:13.5px;line-height:1.55;max-width:600px}
+.result-projects{display:grid;gap:8px;margin-top:20px}
+.result-project{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:9px;color:inherit;text-decoration:none;background:rgba(5,8,10,.55);transition:.25s}
+.result-project:hover{border-color:var(--emerald);background:var(--glow-e);transform:translateX(3px)}
+.result-project>span:first-child{font-family:'Fraunces',serif;font-size:23px;color:var(--violet)}
+.result-project strong{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:500}
+.result-project small{display:block;color:var(--fog);font-size:10.5px;line-height:1.35;margin-top:2px}
+.result-project>em{font-family:'JetBrains Mono',monospace;font-size:8px;font-style:normal;letter-spacing:.1em;color:var(--emerald);text-transform:uppercase}
+.result-actions{display:flex;align-items:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+.engine-primary,.result-actions button{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;border-radius:100px;padding:10px 16px;text-decoration:none;cursor:pointer}
+.engine-primary{color:#04130d;background:var(--emerald);font-weight:700}
+.result-actions button{background:none;border:1px solid var(--line-2);color:var(--fog)}
+.engine-controls{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--fog)}
+.engine-controls button{border:0;background:none;color:var(--fog);font:inherit;cursor:pointer;text-transform:uppercase}
+.engine-controls button:hover{color:var(--emerald)}
+.engine-controls button:disabled{opacity:.3;cursor:not-allowed}
+.engine-controls kbd{border:1px solid var(--line-2);border-radius:3px;padding:2px 5px;color:var(--bone);font:inherit}
 
 /* projects */
 .proj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-.card{position:relative;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--ink-2));overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;display:flex;flex-direction:column;min-height:260px;text-decoration:none;color:inherit}
+.card{position:relative;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--ink-2));overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;display:flex;flex-direction:column;min-height:260px;text-decoration:none;color:inherit;scroll-margin-top:88px}
 a.card{cursor:pointer}
 .card:hover{border-color:var(--line-2);transform:translateY(-5px);box-shadow:0 24px 50px -24px rgba(0,0,0,.7)}
 .card::before{content:'';position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),var(--glow-e),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
@@ -223,8 +283,10 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   .exp-item{grid-template-columns:1fr;gap:12px}
   .ticker{grid-template-columns:repeat(2,1fr);gap:30px 20px}
   .sec-note{text-align:left;max-width:none}
-  .quest-shell{grid-template-columns:1fr}
-  .quest-copy{padding:34px 34px 12px}
+  .engine-head{align-items:flex-start}
+  .engine-grid{grid-template-columns:1fr}
+  .signal-map{border-right:0;border-bottom:1px solid var(--line)}
+  .radar-wrap{width:min(100%,390px)}
 }
 @media (max-width:640px){
   .nav-links{position:fixed;inset:0;background:var(--ink);flex-direction:column;justify-content:center;gap:32px;transform:translateX(100%);transition:transform .4s;z-index:99}
@@ -238,10 +300,22 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   .ticker{grid-template-columns:repeat(2,1fr)}
   section{padding:84px 0}
   .route-quest{padding:22px 0 70px}
-  .quest-copy{padding:28px 24px 8px}
-  .quest-console{margin:16px;padding:20px}
-  .quest-options{grid-template-columns:1fr}
-  .quest-option{min-height:0}
+  .engine-head{padding:26px 22px;display:grid;gap:20px}
+  .engine-head p{font-size:13px}
+  .engine-meta{min-width:0;align-items:flex-start}
+  .signal-map{padding:22px 20px}
+  .radar-wrap{width:min(100%,310px);margin:0 auto -2px}
+  .engine-console{padding:24px 20px}
+  .engine-progress{grid-template-columns:1fr auto}
+  .progress-track{grid-row:2;grid-column:1/-1}
+  .engine-question{grid-template-columns:42px 1fr;gap:12px;padding-top:28px}
+  .question-index{font-size:38px}
+  .engine-options{grid-template-columns:1fr}
+  .engine-option,.engine-option:last-child:nth-child(odd){grid-column:auto;min-height:88px}
+  .result-heading{display:grid;gap:6px}
+  .result-project{grid-template-columns:28px 1fr}
+  .result-project>em{grid-column:2}
+  .engine-controls span{display:none}
 }
 :focus-visible{outline:2px solid var(--emerald);outline-offset:3px;border-radius:3px}
 </style>
@@ -301,26 +375,96 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   </div>
 </header>
 
-<section class="route-quest reveal" id="route" aria-labelledby="quest-title">
-  <div class="quest-shell">
-    <div class="quest-copy">
-      <div class="quest-kicker">Optional &middot; 10-second shortcut</div>
-      <h2 id="quest-title">Choose your <em>route.</em></h2>
-      <p>One quick choice, then I'll highlight the work most relevant to you. No gatekeeping—skip it and keep scrolling whenever you want.</p>
-    </div>
-    <div class="quest-console">
-      <div class="quest-status"><span>Quest 01 / Signal match</span><span id="questState">No choice required</span></div>
-      <p class="quest-prompt">I'm here to...</p>
-      <div class="quest-options" role="group" aria-label="Choose a portfolio route">
-        <button class="quest-option" type="button" data-route-select="data" data-key="01" aria-pressed="false">Find a data thinker</button>
-        <button class="quest-option" type="button" data-route-select="product" data-key="02" aria-pressed="false">Ship a digital product</button>
-        <button class="quest-option" type="button" data-route-select="systems" data-key="03" aria-pressed="false">See systems thinking</button>
+<section class="route-quest reveal" id="route" aria-labelledby="engine-title">
+  <div class="signal-engine" id="signalEngine">
+    <header class="engine-head">
+      <div>
+        <div class="engine-kicker">Portfolio Signal Engine &middot; v2.0</div>
+        <h2 id="engine-title">Build your <em>60-second brief.</em></h2>
+        <p>Three precise choices generate a ranked path through my work. The scoring happens locally and nothing is saved.</p>
       </div>
-      <div class="quest-result" id="questResult" aria-live="polite">
-        <span class="quest-signal" id="questSignal">Awaiting signal</span>
-        <h3 id="questResultTitle">Your shortcut appears here.</h3>
-        <p id="questResultCopy">Pick the intent closest to yours and the strongest matching projects will light up below.</p>
-        <a href="#work" class="quest-link" id="questCta">Or browse everything &darr;</a>
+      <div class="engine-meta" aria-label="Experience details">
+        <span><i></i> Optional experience</span>
+        <span>~20 seconds</span>
+        <a href="#about">Skip to profile &darr;</a>
+      </div>
+    </header>
+
+    <div class="engine-grid">
+      <aside class="signal-map" aria-label="Live capability signal map">
+        <div class="map-topline"><span>Live capability map</span><span id="mapStatus">Awaiting input</span></div>
+        <div class="radar-wrap">
+          <svg class="signal-radar" viewBox="0 0 360 360" role="img" aria-label="Radar showing the selected balance of data, product, and systems work">
+            <defs>
+              <radialGradient id="radarGlow"><stop stop-color="#2ce6a8" stop-opacity=".28"/><stop offset="1" stop-color="#2ce6a8" stop-opacity="0"/></radialGradient>
+              <linearGradient id="radarFill" x1="90" y1="70" x2="280" y2="300"><stop stop-color="#2ce6a8" stop-opacity=".48"/><stop offset="1" stop-color="#a98bff" stop-opacity=".34"/></linearGradient>
+            </defs>
+            <circle cx="180" cy="180" r="150" class="radar-halo"/>
+            <g class="radar-grid">
+              <polygon points="180,54 289,243 71,243"/>
+              <polygon points="180,96 253,222 107,222"/>
+              <polygon points="180,138 216,201 144,201"/>
+              <path d="M180 54V180M289 243 180 180M71 243 180 180"/>
+            </g>
+            <polygon id="signalPolygon" class="signal-polygon" points="180,142 213,199 147,199"/>
+            <g class="project-nodes" aria-hidden="true">
+              <g data-map-project="fatheen" transform="translate(180 45)"><circle r="7"/><text y="-13">FT</text></g>
+              <g data-map-project="mantara" transform="translate(250 65)"><circle r="7"/><text x="12" y="4">MT</text></g>
+              <g data-map-project="yelp" transform="translate(303 116)"><circle r="7"/><text x="12" y="4">YL</text></g>
+              <g data-map-project="abalone" transform="translate(318 188)"><circle r="7"/><text x="12" y="4">AB</text></g>
+              <g data-map-project="covid" transform="translate(286 257)"><circle r="7"/><text x="11" y="4">CV</text></g>
+              <g data-map-project="network" transform="translate(220 300)"><circle r="7"/><text y="20">NW</text></g>
+              <g data-map-project="taxi" transform="translate(142 304)"><circle r="7"/><text y="20">TX</text></g>
+              <g data-map-project="tos" transform="translate(76 265)"><circle r="7"/><text x="-30" y="4">TOS</text></g>
+              <g data-map-project="lost" transform="translate(43 194)"><circle r="7"/><text x="-27" y="4">LF</text></g>
+              <g data-map-project="bebersih" transform="translate(58 117)"><circle r="7"/><text x="-28" y="4">BB</text></g>
+              <g data-map-project="siluins" transform="translate(111 66)"><circle r="7"/><text x="-28" y="4">SL</text></g>
+            </g>
+          </svg>
+          <div class="radar-core"><img src="img/nf-mark.svg" alt=""><span id="radarMode">SCAN</span></div>
+        </div>
+        <div class="signal-bars" aria-label="Current signal balance">
+          <div><span>Data / AI</span><b><i id="axisData"></i></b><output id="axisDataValue">25</output></div>
+          <div><span>Product</span><b><i id="axisProduct"></i></b><output id="axisProductValue">25</output></div>
+          <div><span>Systems</span><b><i id="axisSystems"></i></b><output id="axisSystemsValue">25</output></div>
+        </div>
+        <div class="scan-log"><span class="scan-pulse"></span><p id="scanLog" aria-live="polite">Engine ready. Three signals required.</p></div>
+      </aside>
+
+      <div class="engine-console" tabindex="-1">
+        <div class="engine-progress">
+          <span id="engineProgressLabel">Signal 01 / Context</span>
+          <div class="progress-track" aria-hidden="true"><i id="engineProgressBar"></i></div>
+          <div class="progress-dots" aria-label="Three signal steps"><span class="is-active"></span><span></span><span></span></div>
+        </div>
+
+        <div class="engine-question" id="engineQuestionPanel" aria-live="polite">
+          <div class="question-index" id="questionIndex">01</div>
+          <div class="question-copy">
+            <span id="questionEyebrow">First signal</span>
+            <h3 id="engineQuestion">What brings you here today?</h3>
+            <p id="engineHint">This changes how proof, ownership, and outcomes are weighted.</p>
+          </div>
+          <div class="engine-options" id="engineOptions" role="group" aria-label="Answer choices">
+            <button type="button" class="engine-option" data-answer="hire"><span>01</span><strong>Hiring / team fit</strong><small>Judgement, ownership and collaboration</small></button>
+            <button type="button" class="engine-option" data-answer="commission"><span>02</span><strong>Building a product</strong><small>Execution, UX and shipping range</small></button>
+            <button type="button" class="engine-option" data-answer="explore"><span>03</span><strong>Exploring the work</strong><small>Ideas, craft and technical curiosity</small></button>
+          </div>
+        </div>
+
+        <div class="engine-result" id="engineResult" hidden aria-live="polite">
+          <div class="result-heading"><span>Personalized route generated</span><strong id="resultSignalCount">3 / 3 signals</strong></div>
+          <h3 id="resultTitle">Your strongest path</h3>
+          <p id="resultSummary"></p>
+          <div class="result-projects" id="resultProjects"></div>
+          <div class="result-actions"><a href="#work" class="engine-primary" id="resultCta">Open top match &darr;</a><button type="button" id="retuneEngine">Retune answers</button></div>
+        </div>
+
+        <div class="engine-controls">
+          <button type="button" id="engineBack" disabled>&larr; Back</button>
+          <span>Keyboard: <kbd>1</kbd>–<kbd>4</kbd> to choose</span>
+          <button type="button" id="engineReset">Reset scan</button>
+        </div>
       </div>
     </div>
   </div>
@@ -359,7 +503,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   </div>
   <div class="proj-grid">
 
-    <a href="https://fatheen-legal.vercel.app/" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="product" aria-label="Open the live Fatheen landing page">
+    <a id="project-fatheen" href="https://fatheen-legal.vercel.app/" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="product" aria-label="Open the live Fatheen landing page">
       <div class="card-body">
         <div class="card-kicker">Product Landing Page &middot; Islamic Tech</div>
         <h3>Fatheen — Muslim Companion</h3>
@@ -369,7 +513,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://mantaraofficial.github.io/" target="_blank" rel="noopener noreferrer" class="card half v reveal" data-card data-route="product" aria-label="Open the live Mantara landing page">
+    <a id="project-mantara" href="https://mantaraofficial.github.io/" target="_blank" rel="noopener noreferrer" class="card half v reveal" data-card data-route="product" aria-label="Open the live Mantara landing page">
       <div class="card-body">
         <div class="card-kicker">Game Landing Page &middot; Fantasy Simulation</div>
         <h3>Mantara — Hikayat Dunia Sihir</h3>
@@ -379,7 +523,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <article class="card feat reveal" data-card data-route="data systems">
+    <article id="project-yelp" class="card feat reveal" data-card data-route="data systems">
       <div class="card-body">
         <div>
           <div class="card-kicker">Big Data &middot; NLP &middot; Spark</div>
@@ -396,7 +540,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </article>
 
-    <a href="https://github.com/rzkisptraa/TubesAI_AbaloneDataset" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card data-route="data" aria-label="Abalone age prediction on GitHub">
+    <a id="project-abalone" href="https://github.com/rzkisptraa/TubesAI_AbaloneDataset" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card data-route="data" aria-label="Abalone age prediction on GitHub">
       <div class="card-body">
         <div class="card-kicker">Machine Learning</div>
         <div class="card-metric">82<span class="u">%</span></div>
@@ -407,7 +551,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/Covid-Data-Project" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="data" aria-label="COVID-19 global data analysis on GitHub">
+    <a id="project-covid" href="https://github.com/valtheen/Covid-Data-Project" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="data" aria-label="COVID-19 global data analysis on GitHub">
       <div class="card-body">
         <div class="card-kicker">Data Analytics &middot; EDA</div>
         <h3>COVID-19 global data analysis</h3>
@@ -417,7 +561,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/network-monitoring-dashboard" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="systems product" aria-label="Network Monitoring Dashboard on GitHub">
+    <a id="project-network" href="https://github.com/valtheen/network-monitoring-dashboard" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="systems product" aria-label="Network Monitoring Dashboard on GitHub">
       <div class="card-body">
         <div class="card-kicker">Full-stack &middot; Real-time</div>
         <h3>Network Monitoring Dashboard</h3>
@@ -427,7 +571,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/Hazjel/New-York-City-Taxi-Fare-Prediction" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card data-route="data systems" aria-label="NYC Taxi Fare Prediction on GitHub">
+    <a id="project-taxi" href="https://github.com/Hazjel/New-York-City-Taxi-Fare-Prediction" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card data-route="data systems" aria-label="NYC Taxi Fare Prediction on GitHub">
       <div class="card-body">
         <div class="card-kicker">Big Data &middot; PySpark</div>
         <h3>NYC Taxi Fare Prediction</h3>
@@ -437,7 +581,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <article class="card third reveal" data-card data-route="systems product">
+    <article id="project-tos" class="card third reveal" data-card data-route="systems product">
       <div class="card-body">
         <div class="card-kicker">System Design &middot; Integration</div>
         <div class="card-metric">Rp2<span class="u">B</span></div>
@@ -448,7 +592,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </article>
 
-    <a href="https://github.com/valtheen/LostnFound" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="product systems" aria-label="LostnFound on GitHub">
+    <a id="project-lost" href="https://github.com/valtheen/LostnFound" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="product systems" aria-label="LostnFound on GitHub">
       <div class="card-body">
         <div class="card-kicker">Full-stack &middot; Spring Boot</div>
         <h3>LostnFound</h3>
@@ -458,7 +602,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/bebersih" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="product data" aria-label="BEBERSIH on GitHub">
+    <a id="project-bebersih" href="https://github.com/valtheen/bebersih" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="product data" aria-label="BEBERSIH on GitHub">
       <div class="card-body">
         <div class="card-kicker">Web App &middot; Analytics</div>
         <h3>BEBERSIH — Clean Living Platform</h3>
@@ -468,7 +612,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/siluinsweb" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="systems product" aria-label="SILUINS on GitHub">
+    <a id="project-siluins" href="https://github.com/valtheen/siluinsweb" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="systems product" aria-label="SILUINS on GitHub">
       <div class="card-body">
         <div class="card-kicker">B2B Platform &middot; System Design</div>
         <h3>SILUINS — Vendor &amp; Supplier</h3>
@@ -555,24 +699,102 @@ function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var e=1-Math.pow(1-
 var statIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target);statIO.unobserve(e.target);}});},{threshold:.5});
 document.querySelectorAll('.num[data-count]').forEach(function(el){statIO.observe(el);});
 
-// optional route finder — highlights relevant work without filtering anything out
+// Portfolio Signal Engine — three answers are scored against every project profile.
 (function(){
-  var routes={
-    data:{signal:'Recommended route · Data / AI',title:'Start where the signal is noisy.',copy:'Follow the work across 7M-review NLP, global data exploration, predictive modelling and decision-ready analytics.'},
-    product:{signal:'Recommended route · Product / Web',title:'From concept to something people can use.',copy:'Explore live product experiences, full-stack platforms and interfaces designed to make complex systems feel clear.'},
-    systems:{signal:'Recommended route · Systems / Scale',title:'Look under the interface.',copy:'See distributed pipelines, real-time monitoring, service integrations and system design built for real operational constraints.'}
-  };
-  var buttons=document.querySelectorAll('[data-route-select]'),result=document.getElementById('questResult'),state=document.getElementById('questState');
-  var signal=document.getElementById('questSignal'),title=document.getElementById('questResultTitle'),copy=document.getElementById('questResultCopy'),cta=document.getElementById('questCta');
-  buttons.forEach(function(button){button.addEventListener('click',function(){
-    var route=button.getAttribute('data-route-select'),content=routes[route];
-    buttons.forEach(function(item){item.setAttribute('aria-pressed',String(item===button));});
+  var dimensions=['data','product','systems','impact','scale','craft','speed'];
+  var steps=[
+    {id:'context',label:'Context',eyebrow:'First signal',question:'What brings you here today?',hint:'This changes how proof, ownership and outcomes are weighted.',answers:[
+      {id:'hire',title:'Hiring / team fit',desc:'Judgement, ownership and collaboration',weights:{data:2,product:1,systems:2,impact:3,scale:1,craft:1,speed:1},log:'Context set: evidence and ownership weighted.'},
+      {id:'commission',title:'Building a product',desc:'Execution, UX and shipping range',weights:{data:1,product:3,systems:2,impact:2,scale:1,craft:2,speed:2},log:'Context set: product execution weighted.'},
+      {id:'explore',title:'Exploring the work',desc:'Ideas, craft and technical curiosity',weights:{data:1,product:2,systems:2,impact:1,scale:1,craft:3,speed:1},log:'Context set: range and craft weighted.'}
+    ]},
+    {id:'domain',label:'Domain',eyebrow:'Second signal',question:'Where should the proof be deepest?',hint:'Choose the domain you want the ranked route to emphasize.',answers:[
+      {id:'analytics',title:'Analytics & insight',desc:'EDA, KPI thinking and decisions',weights:{data:4,product:0,systems:1,impact:2,scale:1,craft:1,speed:2},log:'Domain locked: analytical decision-making.'},
+      {id:'ai',title:'AI & machine learning',desc:'Models, NLP and data pipelines',weights:{data:4,product:1,systems:2,impact:1,scale:3,craft:1,speed:0},log:'Domain locked: ML and data scale.'},
+      {id:'product',title:'Digital products',desc:'Useful interfaces and full-stack delivery',weights:{data:0,product:4,systems:1,impact:2,scale:1,craft:3,speed:2},log:'Domain locked: product and experience.'},
+      {id:'platform',title:'Platforms & systems',desc:'Architecture, integration and reliability',weights:{data:1,product:1,systems:4,impact:1,scale:3,craft:1,speed:1},log:'Domain locked: systems and architecture.'}
+    ]},
+    {id:'priority',label:'Priority',eyebrow:'Final signal',question:'What matters most in the evidence?',hint:'The engine uses this as the final tie-breaker between strong matches.',answers:[
+      {id:'impact',title:'Measurable impact',desc:'Outcomes people can act on',weights:{data:1,product:1,systems:1,impact:4,scale:1,craft:0,speed:1},log:'Priority confirmed: measurable impact.'},
+      {id:'scale',title:'Scale & complexity',desc:'Volume, distributed work and constraints',weights:{data:1,product:0,systems:2,impact:1,scale:4,craft:0,speed:0},log:'Priority confirmed: scale and complexity.'},
+      {id:'craft',title:'Product craft',desc:'Clarity, interaction and detail',weights:{data:0,product:2,systems:0,impact:1,scale:0,craft:4,speed:1},log:'Priority confirmed: craft and clarity.'},
+      {id:'speed',title:'Execution speed',desc:'Fast paths from idea to shipped work',weights:{data:1,product:2,systems:1,impact:1,scale:0,craft:1,speed:4},log:'Priority confirmed: execution speed.'}
+    ]}
+  ];
+  var projects=[
+    {id:'fatheen',title:'Fatheen — Muslim Companion',why:'Live product story, interface craft and focused delivery.',traits:{data:0,product:5,systems:2,impact:3,scale:2,craft:5,speed:3}},
+    {id:'mantara',title:'Mantara — Fantasy Life Simulator',why:'Immersive interaction design with a complex product surface.',traits:{data:0,product:5,systems:3,impact:2,scale:2,craft:5,speed:3}},
+    {id:'yelp',title:'Sentiment at scale — Yelp',why:'7M reviews, distributed Spark processing and transformer NLP.',traits:{data:5,product:1,systems:5,impact:4,scale:5,craft:2,speed:1}},
+    {id:'abalone',title:'Abalone age prediction',why:'Complete preprocessing and comparative ML modelling pipeline.',traits:{data:4,product:1,systems:2,impact:2,scale:2,craft:1,speed:3}},
+    {id:'covid',title:'COVID-19 global analysis',why:'Narrative-led EDA designed to surface decision-ready patterns.',traits:{data:5,product:1,systems:1,impact:4,scale:2,craft:2,speed:3}},
+    {id:'network',title:'Network Monitoring Dashboard',why:'Real-time data, WebSockets and full-stack operational visibility.',traits:{data:3,product:4,systems:5,impact:3,scale:4,craft:3,speed:2}},
+    {id:'taxi',title:'NYC Taxi Fare Prediction',why:'Distributed feature engineering and prediction at city scale.',traits:{data:4,product:1,systems:4,impact:3,scale:5,craft:1,speed:2}},
+    {id:'tos',title:'TOS Telkom — One Stop Services',why:'Rp2B operational platform shaped by integration constraints.',traits:{data:1,product:3,systems:5,impact:5,scale:4,craft:2,speed:2}},
+    {id:'lost',title:'LostnFound',why:'Full-stack delivery across auth, API, storage and responsive UI.',traits:{data:1,product:4,systems:3,impact:3,scale:2,craft:3,speed:3}},
+    {id:'bebersih',title:'BEBERSIH',why:'Multi-role product with booking, wallet and revenue analytics.',traits:{data:2,product:5,systems:3,impact:4,scale:3,craft:4,speed:3}},
+    {id:'siluins',title:'SILUINS',why:'B2B workflows, contracts, disputes and auditable system design.',traits:{data:1,product:4,systems:5,impact:4,scale:4,craft:3,speed:2}}
+  ];
+
+  var current=0,answers={};
+  var engine=document.getElementById('signalEngine'),consolePanel=engine.querySelector('.engine-console');
+  var questionPanel=document.getElementById('engineQuestionPanel'),resultPanel=document.getElementById('engineResult'),options=document.getElementById('engineOptions');
+  var progressLabel=document.getElementById('engineProgressLabel'),progressBar=document.getElementById('engineProgressBar'),dots=engine.querySelectorAll('.progress-dots span');
+  var back=document.getElementById('engineBack'),reset=document.getElementById('engineReset'),retune=document.getElementById('retuneEngine');
+  var mapStatus=document.getElementById('mapStatus'),radarMode=document.getElementById('radarMode'),scanLog=document.getElementById('scanLog'),polygon=document.getElementById('signalPolygon');
+  var resultTitle=document.getElementById('resultTitle'),resultSummary=document.getElementById('resultSummary'),resultProjects=document.getElementById('resultProjects'),resultCta=document.getElementById('resultCta');
+
+  function selectedAnswers(){return steps.map(function(step){return answers[step.id];}).filter(Boolean);}
+  function profile(){var values={};dimensions.forEach(function(d){values[d]=1;});selectedAnswers().forEach(function(answer){dimensions.forEach(function(d){values[d]+=answer.weights[d]||0;});});return values;}
+  function axisValues(){var p=profile(),main=['data','product','systems'],max=Math.max.apply(null,main.map(function(d){return p[d];}));var out={};main.forEach(function(d){out[d]=Math.round(20+80*(p[d]/max));});return out;}
+  function updateRadar(){
+    var axes=axisValues(),count=selectedAnswers().length;
+    ['data','product','systems'].forEach(function(d){var cap=d.charAt(0).toUpperCase()+d.slice(1);document.getElementById('axis'+cap).style.width=axes[d]+'%';document.getElementById('axis'+cap+'Value').textContent=axes[d];});
+    var topY=180-126*axes.data/100,productX=180+109*axes.product/100,productY=180+63*axes.product/100,systemsX=180-109*axes.systems/100,systemsY=180+63*axes.systems/100;
+    polygon.setAttribute('points','180,'+topY.toFixed(1)+' '+productX.toFixed(1)+','+productY.toFixed(1)+' '+systemsX.toFixed(1)+','+systemsY.toFixed(1));
+    mapStatus.textContent=count?count+' / 3 signals':'Awaiting input';radarMode.textContent=count===3?'MATCH':'STEP '+(count+1);
+  }
+  function markProgress(isResult){
+    var completed=isResult?3:current;
+    progressBar.style.width=((isResult?3:current+1)/3*100)+'%';
+    dots.forEach(function(dot,i){dot.className=i<completed?'is-done':(i===current&&!isResult?'is-active':'');});
+  }
+  function optionMarkup(answer,i){var pressed=answers[steps[current].id]&&answers[steps[current].id].id===answer.id;return '<button type="button" class="engine-option" data-answer="'+answer.id+'" aria-pressed="'+pressed+'"><span>0'+(i+1)+'</span><strong>'+answer.title+'</strong><small>'+answer.desc+'</small></button>';}
+  function renderStep(shouldFocus){
+    var step=steps[current];questionPanel.hidden=false;resultPanel.hidden=true;
+    document.getElementById('questionIndex').textContent='0'+(current+1);document.getElementById('questionEyebrow').textContent=step.eyebrow;
+    document.getElementById('engineQuestion').textContent=step.question;document.getElementById('engineHint').textContent=step.hint;
+    progressLabel.textContent='Signal 0'+(current+1)+' / '+step.label;options.innerHTML=step.answers.map(optionMarkup).join('');
+    options.querySelectorAll('button').forEach(function(button){button.addEventListener('click',function(){choose(button.getAttribute('data-answer'));});});
+    back.disabled=current===0;markProgress(false);updateRadar();
+    if(shouldFocus){var first=options.querySelector('button');if(first)first.focus({preventScroll:true});}
+  }
+  function choose(id){
+    var step=steps[current],answer=step.answers.find(function(item){return item.id===id;});if(!answer)return;
+    answers[step.id]=answer;steps.slice(current+1).forEach(function(later){delete answers[later.id];});
+    options.querySelectorAll('button').forEach(function(button){button.disabled=true;button.setAttribute('aria-pressed',String(button.getAttribute('data-answer')===id));});
+    scanLog.textContent=answer.log;updateRadar();
+    setTimeout(function(){if(current===steps.length-1){renderResult();}else{current+=1;renderStep(true);}},240);
+  }
+  function scoreProjects(){var p=profile();return projects.map(function(project,index){var score=dimensions.reduce(function(total,d){return total+(project.traits[d]||0)*p[d];},0);return {project:project,score:score,index:index};}).sort(function(a,b){return b.score-a.score||a.index-b.index;});}
+  function renderResult(){
+    var ranked=scoreProjects(),top=ranked.slice(0,3),context=answers.context,domain=answers.domain,priority=answers.priority;
+    questionPanel.hidden=true;resultPanel.hidden=false;progressLabel.textContent='Route ready / Ranked evidence';markProgress(true);progressBar.style.width='100%';back.disabled=false;
+    var axis=axisValues(),lead=Object.keys(axis).sort(function(a,b){return axis[b]-axis[a];})[0];
+    var titles={data:'Evidence first. Build from the signal.',product:'A builder path with product depth.',systems:'A systems path built for reality.'};
+    resultTitle.textContent=titles[lead];resultSummary.textContent='Ranked for '+context.title.toLowerCase()+', with '+domain.title.toLowerCase()+' and '+priority.title.toLowerCase()+' weighted highest.';
+    resultProjects.innerHTML=top.map(function(item,i){var labels=['Primary signal','Strong signal','Supporting'];return '<a class="result-project" href="#project-'+item.project.id+'"><span>0'+(i+1)+'</span><span><strong>'+item.project.title+'</strong><small>'+item.project.why+'</small></span><em>'+labels[i]+'</em></a>';}).join('');
     document.querySelectorAll('[data-card]').forEach(function(card){card.classList.remove('route-match');});
-    var matches=document.querySelectorAll('[data-card][data-route~="'+route+'"]');
-    matches.forEach(function(card){card.classList.add('route-match');});
-    signal.textContent=content.signal;title.textContent=content.title;copy.textContent=content.copy;
-    state.textContent=matches.length+' projects matched';cta.textContent='Reveal matched work ↓';result.classList.add('is-active');
-  });});
+    document.querySelectorAll('[data-map-project]').forEach(function(node){node.classList.remove('is-hot','is-warm');});
+    top.forEach(function(item,i){var card=document.getElementById('project-'+item.project.id),node=document.querySelector('[data-map-project="'+item.project.id+'"]');if(card)card.classList.add('route-match');if(node)node.classList.add(i===0?'is-hot':'is-warm');});
+    resultCta.href='#project-'+top[0].project.id;resultCta.textContent='Open #1 · '+top[0].project.title+' ↓';mapStatus.textContent='3 projects ranked';radarMode.textContent='MATCH';scanLog.textContent='Route generated. Top three signals illuminated.';
+    resultProjects.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){var target=document.querySelector(link.getAttribute('href'));if(target)setTimeout(function(){target.focus({preventScroll:true});},450);});});
+    resultPanel.focus&&resultPanel.focus({preventScroll:true});
+  }
+  function resetEngine(){current=0;answers={};document.querySelectorAll('[data-card]').forEach(function(card){card.classList.remove('route-match');});document.querySelectorAll('[data-map-project]').forEach(function(node){node.classList.remove('is-hot','is-warm');});scanLog.textContent='Engine ready. Three signals required.';renderStep(false);}
+  back.addEventListener('click',function(){if(!resultPanel.hidden){current=2;}else if(current>0){current-=1;}renderStep(true);});
+  reset.addEventListener('click',resetEngine);retune.addEventListener('click',function(){current=2;renderStep(true);});
+  consolePanel.addEventListener('keydown',function(e){if(!resultPanel.hidden)return;var n=parseInt(e.key,10);if(n>=1&&n<=4){var button=options.querySelectorAll('button')[n-1];if(button){e.preventDefault();button.click();}}});
+  updateRadar();renderStep(false);
 })();
 
 // card spotlight
