@@ -145,7 +145,7 @@ a.card{cursor:pointer}
 .card.feat{grid-column:span 8}
 .card.half{grid-column:span 6}
 .card.third{grid-column:span 4}
-.card-kicker{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--emerald);text-transform:uppercase;margin-bottom:auto}
+.card-kicker{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--emerald);text-transform:uppercase;margin-bottom:auto;padding-right:34px}
 .card.v .card-kicker{color:var(--violet)}
 .card-metric{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(42px,6vw,80px);line-height:.9;letter-spacing:-.02em;color:var(--bone);margin:18px 0 4px}
 .card-metric .u{color:var(--emerald);font-size:.4em;vertical-align:super}
@@ -257,7 +257,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
     <div class="ticker">
       <div class="stat"><div class="num" data-count="7" data-suffix="M">0<span class="u">M</span></div><div class="lbl">Reviews processed (Spark)</div></div>
       <div class="stat"><div class="num" data-count="92.35" data-suffix="%">0<span class="u">%</span></div><div class="lbl">Model accuracy (DistilBERT)</div></div>
-      <div class="stat"><div class="num" data-count="9" data-suffix="+">0<span class="u">+</span></div><div class="lbl">Shipped projects</div></div>
+      <div class="stat"><div class="num" data-count="11" data-suffix="+">0<span class="u">+</span></div><div class="lbl">Shipped projects</div></div>
       <div class="stat"><div class="num" data-count="3" data-suffix="">0</div><div class="lbl">Languages (ID/EN/FR)</div></div>
     </div>
   </div>
@@ -292,9 +292,29 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
 <section id="work">
   <div class="sec-head reveal">
     <div><div class="sec-index">02 / work</div><h2 class="sec-title">Selected <span class="ital">projects</span></h2></div>
-    <p class="sec-note">// click a card to open the repo on GitHub</p>
+    <p class="sec-note">// click a card to explore the live site or GitHub repo</p>
   </div>
   <div class="proj-grid">
+
+    <a href="https://fatheen-legal.vercel.app/" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card aria-label="Open the live Fatheen landing page">
+      <div class="card-body">
+        <div class="card-kicker">Product Landing Page &middot; Islamic Tech</div>
+        <h3>Fatheen — Muslim Companion</h3>
+        <p>A polished product site for an iPhone companion that brings together the Qur'an, daily worship, Islamic learning, stories, reflection and contextual AI guidance.</p>
+        <div class="card-tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Product Design</span></div>
+      </div>
+      <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
+    </a>
+
+    <a href="https://mantaraofficial.github.io/" target="_blank" rel="noopener noreferrer" class="card half v reveal" data-card aria-label="Open the live Mantara landing page">
+      <div class="card-body">
+        <div class="card-kicker">Game Landing Page &middot; Fantasy Simulation</div>
+        <h3>Mantara — Hikayat Dunia Sihir</h3>
+        <p>An immersive Indonesian landing page for a fantasy life simulator, showcasing a living world, branching quests, tactical combat, dynasties and choices that shape every generation.</p>
+        <div class="card-tags"><span>React</span><span>TypeScript</span><span>Vinext</span><span>Interactive UI</span></div>
+      </div>
+      <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
+    </a>
 
     <article class="card feat reveal" data-card>
       <div class="card-body">
