@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nauval Fathin — Data Scientist & Analyst</title>
 <meta name="description" content="Muhammad Nauval Fathin Kusumah — Data Scientist & Analyst. 7M reviews processed, 92.35% model accuracy, Rp 2B systems shipped.">
+<meta name="theme-color" content="#05080a">
+<link rel="icon" href="img/nf-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -48,7 +50,7 @@ body{background:var(--ink);color:var(--bone);font-family:'Space Grotesk',system-
 #pre{position:fixed;inset:0;z-index:9999;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity .7s ease,visibility .7s}
 #pre.done{opacity:0;visibility:hidden}
 .pre-glyph{font-family:'Fraunces',serif;font-weight:900;font-size:64px;color:var(--bone);letter-spacing:-.03em;position:relative}
-.pre-glyph .c{color:transparent;-webkit-text-stroke:1.4px var(--emerald)}
+.pre-glyph img{display:block;width:68px;height:68px;filter:drop-shadow(0 0 22px rgba(44,230,168,.2))}
 .pre-mono{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--fog);text-transform:uppercase}
 .pre-bar{width:180px;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
 .pre-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--emerald),var(--violet));animation:load 1.6s ease forwards}
@@ -57,8 +59,10 @@ body{background:var(--ink);color:var(--bone);font-family:'Space Grotesk',system-
 /* ---- nav ---- */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;transition:.3s;background:linear-gradient(to bottom,rgba(5,8,10,.8),transparent)}
 nav.scrolled{padding:12px 28px;background:rgba(5,8,10,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.brand{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.2em;color:var(--bone);text-decoration:none;display:flex;align-items:center;gap:9px}
-.brand .dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 14px var(--emerald);animation:pulse 2.4s ease-in-out infinite}
+.brand{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.2em;color:var(--bone);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand-mark{width:30px;height:30px;display:block;transition:transform .3s,filter .3s;filter:drop-shadow(0 0 10px rgba(44,230,168,.14))}
+.brand:hover .brand-mark{transform:rotate(-5deg) scale(1.08);filter:drop-shadow(0 0 13px rgba(44,230,168,.32))}
+.brand-word{white-space:nowrap}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.85)}}
 .nav-links{display:flex;gap:30px;align-items:center}
 .nav-links a{color:var(--fog);text-decoration:none;font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.08em;transition:color .25s;position:relative}
@@ -133,6 +137,31 @@ section{position:relative;padding:120px 0;z-index:2}
 .chip{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--bone);border:1px solid var(--line);border-radius:100px;padding:8px 15px;transition:.25s;background:var(--ink-2)}
 .chip:hover{border-color:var(--emerald);color:var(--emerald);transform:translateY(-2px)}
 
+/* optional portfolio route */
+.route-quest{padding:42px 0 88px}
+.quest-shell{border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,rgba(13,21,25,.96),rgba(8,13,17,.94));display:grid;grid-template-columns:.85fr 1.15fr;overflow:hidden;position:relative}
+.quest-shell::before{content:'';position:absolute;width:340px;height:340px;border-radius:50%;left:-170px;top:-180px;background:radial-gradient(circle,var(--glow-e),transparent 68%);pointer-events:none}
+.quest-copy{padding:42px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+.quest-kicker{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--emerald);text-transform:uppercase;margin-bottom:18px}
+.quest-copy h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.03;letter-spacing:-.02em}
+.quest-copy h2 em{font-weight:400;color:var(--violet)}
+.quest-copy p{color:var(--fog);font-size:14.5px;line-height:1.65;margin-top:18px;max-width:390px}
+.quest-console{margin:18px;border:1px solid var(--line-2);border-radius:12px;background:rgba(5,8,10,.7);padding:28px;position:relative;z-index:1}
+.quest-status{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding-bottom:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fog)}
+.quest-status span:first-child{color:var(--emerald)}
+.quest-prompt{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bone);margin:22px 0 14px}
+.quest-options{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.quest-option{min-height:78px;border:1px solid var(--line);border-radius:9px;background:var(--ink-2);color:var(--fog);font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.35;text-align:left;padding:14px;cursor:pointer;transition:.25s}
+.quest-option::before{content:attr(data-key);display:block;font-family:'JetBrains Mono',monospace;color:var(--emerald);font-size:9px;letter-spacing:.14em;margin-bottom:7px}
+.quest-option:hover,.quest-option[aria-pressed="true"]{border-color:var(--emerald);color:var(--bone);background:var(--glow-e);transform:translateY(-2px)}
+.quest-result{margin-top:18px;padding:20px;border:1px dashed var(--line-2);border-radius:9px;transition:border-color .3s,background .3s}
+.quest-result.is-active{border-style:solid;border-color:rgba(169,139,255,.55);background:var(--glow-v)}
+.quest-signal{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--violet);text-transform:uppercase}
+.quest-result h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;margin:7px 0 5px}
+.quest-result p{font-size:13.5px;line-height:1.55;color:var(--fog)}
+.quest-link{display:inline-flex;margin-top:12px;color:var(--emerald);font-family:'JetBrains Mono',monospace;font-size:11px;text-decoration:none;letter-spacing:.04em}
+.quest-link:hover{text-decoration:underline;text-underline-offset:4px}
+
 /* projects */
 .proj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
 .card{position:relative;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--ink-2));overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;display:flex;flex-direction:column;min-height:260px;text-decoration:none;color:inherit}
@@ -157,6 +186,8 @@ a.card{cursor:pointer}
 .card-arrow{position:absolute;top:24px;right:24px;color:var(--fog);transition:.3s;z-index:2}
 .card:hover .card-arrow{color:var(--emerald);transform:translate(3px,-3px)}
 .card.v:hover .card-arrow{color:var(--violet)}
+.card.route-match{border-color:rgba(44,230,168,.7);box-shadow:0 0 0 1px rgba(44,230,168,.1),0 20px 50px -26px rgba(44,230,168,.6)}
+.card.v.route-match{border-color:rgba(169,139,255,.75);box-shadow:0 0 0 1px rgba(169,139,255,.1),0 20px 50px -26px rgba(169,139,255,.65)}
 .feat .card-body{justify-content:space-between}
 .feat-split{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-top:14px}
 
@@ -192,6 +223,8 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   .exp-item{grid-template-columns:1fr;gap:12px}
   .ticker{grid-template-columns:repeat(2,1fr);gap:30px 20px}
   .sec-note{text-align:left;max-width:none}
+  .quest-shell{grid-template-columns:1fr}
+  .quest-copy{padding:34px 34px 12px}
 }
 @media (max-width:640px){
   .nav-links{position:fixed;inset:0;background:var(--ink);flex-direction:column;justify-content:center;gap:32px;transform:translateX(100%);transition:transform .4s;z-index:99}
@@ -204,6 +237,11 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   .wrap{padding:0 20px}
   .ticker{grid-template-columns:repeat(2,1fr)}
   section{padding:84px 0}
+  .route-quest{padding:22px 0 70px}
+  .quest-copy{padding:28px 24px 8px}
+  .quest-console{margin:16px;padding:20px}
+  .quest-options{grid-template-columns:1fr}
+  .quest-option{min-height:0}
 }
 :focus-visible{outline:2px solid var(--emerald);outline-offset:3px;border-radius:3px}
 </style>
@@ -211,7 +249,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
 <body>
 
 <div id="pre">
-  <div class="pre-glyph">N<span class="c">F</span></div>
+  <div class="pre-glyph"><img src="img/nf-mark.svg" alt=""></div>
   <div class="pre-bar"><span></span></div>
   <div class="pre-mono" id="preCount">00%</div>
 </div>
@@ -220,7 +258,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
 <div class="noise"></div>
 
 <nav id="nav">
-  <a href="#top" class="brand"><span class="dot"></span>NAUVAL.F</a>
+  <a href="#top" class="brand" aria-label="Nauval Fathin, back to top"><img src="img/nf-mark.svg" class="brand-mark" alt=""><span class="brand-word">NAUVAL.F</span></a>
   <div class="nav-links" id="navlinks">
     <a href="#about">about</a>
     <a href="#work">work</a>
@@ -263,6 +301,31 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   </div>
 </header>
 
+<section class="route-quest reveal" id="route" aria-labelledby="quest-title">
+  <div class="quest-shell">
+    <div class="quest-copy">
+      <div class="quest-kicker">Optional &middot; 10-second shortcut</div>
+      <h2 id="quest-title">Choose your <em>route.</em></h2>
+      <p>One quick choice, then I'll highlight the work most relevant to you. No gatekeeping—skip it and keep scrolling whenever you want.</p>
+    </div>
+    <div class="quest-console">
+      <div class="quest-status"><span>Quest 01 / Signal match</span><span id="questState">No choice required</span></div>
+      <p class="quest-prompt">I'm here to...</p>
+      <div class="quest-options" role="group" aria-label="Choose a portfolio route">
+        <button class="quest-option" type="button" data-route-select="data" data-key="01" aria-pressed="false">Find a data thinker</button>
+        <button class="quest-option" type="button" data-route-select="product" data-key="02" aria-pressed="false">Ship a digital product</button>
+        <button class="quest-option" type="button" data-route-select="systems" data-key="03" aria-pressed="false">See systems thinking</button>
+      </div>
+      <div class="quest-result" id="questResult" aria-live="polite">
+        <span class="quest-signal" id="questSignal">Awaiting signal</span>
+        <h3 id="questResultTitle">Your shortcut appears here.</h3>
+        <p id="questResultCopy">Pick the intent closest to yours and the strongest matching projects will light up below.</p>
+        <a href="#work" class="quest-link" id="questCta">Or browse everything &darr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="sec-head reveal">
     <div><div class="sec-index">01 / about</div><h2 class="sec-title">The person <span class="ital">behind the queries</span></h2></div>
@@ -296,7 +359,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
   </div>
   <div class="proj-grid">
 
-    <a href="https://fatheen-legal.vercel.app/" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card aria-label="Open the live Fatheen landing page">
+    <a href="https://fatheen-legal.vercel.app/" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="product" aria-label="Open the live Fatheen landing page">
       <div class="card-body">
         <div class="card-kicker">Product Landing Page &middot; Islamic Tech</div>
         <h3>Fatheen — Muslim Companion</h3>
@@ -306,7 +369,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://mantaraofficial.github.io/" target="_blank" rel="noopener noreferrer" class="card half v reveal" data-card aria-label="Open the live Mantara landing page">
+    <a href="https://mantaraofficial.github.io/" target="_blank" rel="noopener noreferrer" class="card half v reveal" data-card data-route="product" aria-label="Open the live Mantara landing page">
       <div class="card-body">
         <div class="card-kicker">Game Landing Page &middot; Fantasy Simulation</div>
         <h3>Mantara — Hikayat Dunia Sihir</h3>
@@ -316,7 +379,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <article class="card feat reveal" data-card>
+    <article class="card feat reveal" data-card data-route="data systems">
       <div class="card-body">
         <div>
           <div class="card-kicker">Big Data &middot; NLP &middot; Spark</div>
@@ -333,7 +396,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </article>
 
-    <a href="https://github.com/rzkisptraa/TubesAI_AbaloneDataset" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card aria-label="Abalone age prediction on GitHub">
+    <a href="https://github.com/rzkisptraa/TubesAI_AbaloneDataset" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card data-route="data" aria-label="Abalone age prediction on GitHub">
       <div class="card-body">
         <div class="card-kicker">Machine Learning</div>
         <div class="card-metric">82<span class="u">%</span></div>
@@ -344,7 +407,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/Covid-Data-Project" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card aria-label="COVID-19 global data analysis on GitHub">
+    <a href="https://github.com/valtheen/Covid-Data-Project" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="data" aria-label="COVID-19 global data analysis on GitHub">
       <div class="card-body">
         <div class="card-kicker">Data Analytics &middot; EDA</div>
         <h3>COVID-19 global data analysis</h3>
@@ -354,7 +417,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/network-monitoring-dashboard" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card aria-label="Network Monitoring Dashboard on GitHub">
+    <a href="https://github.com/valtheen/network-monitoring-dashboard" target="_blank" rel="noopener noreferrer" class="card half reveal" data-card data-route="systems product" aria-label="Network Monitoring Dashboard on GitHub">
       <div class="card-body">
         <div class="card-kicker">Full-stack &middot; Real-time</div>
         <h3>Network Monitoring Dashboard</h3>
@@ -364,7 +427,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/Hazjel/New-York-City-Taxi-Fare-Prediction" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card aria-label="NYC Taxi Fare Prediction on GitHub">
+    <a href="https://github.com/Hazjel/New-York-City-Taxi-Fare-Prediction" target="_blank" rel="noopener noreferrer" class="card third v reveal" data-card data-route="data systems" aria-label="NYC Taxi Fare Prediction on GitHub">
       <div class="card-body">
         <div class="card-kicker">Big Data &middot; PySpark</div>
         <h3>NYC Taxi Fare Prediction</h3>
@@ -374,7 +437,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <article class="card third reveal" data-card>
+    <article class="card third reveal" data-card data-route="systems product">
       <div class="card-body">
         <div class="card-kicker">System Design &middot; Integration</div>
         <div class="card-metric">Rp2<span class="u">B</span></div>
@@ -385,7 +448,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </article>
 
-    <a href="https://github.com/valtheen/LostnFound" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card aria-label="LostnFound on GitHub">
+    <a href="https://github.com/valtheen/LostnFound" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="product systems" aria-label="LostnFound on GitHub">
       <div class="card-body">
         <div class="card-kicker">Full-stack &middot; Spring Boot</div>
         <h3>LostnFound</h3>
@@ -395,7 +458,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/bebersih" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card aria-label="BEBERSIH on GitHub">
+    <a href="https://github.com/valtheen/bebersih" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="product data" aria-label="BEBERSIH on GitHub">
       <div class="card-body">
         <div class="card-kicker">Web App &middot; Analytics</div>
         <h3>BEBERSIH — Clean Living Platform</h3>
@@ -405,7 +468,7 @@ footer .fmono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(
       <svg class="card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
-    <a href="https://github.com/valtheen/siluinsweb" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card aria-label="SILUINS on GitHub">
+    <a href="https://github.com/valtheen/siluinsweb" target="_blank" rel="noopener noreferrer" class="card third reveal" data-card data-route="systems product" aria-label="SILUINS on GitHub">
       <div class="card-body">
         <div class="card-kicker">B2B Platform &middot; System Design</div>
         <h3>SILUINS — Vendor &amp; Supplier</h3>
@@ -491,6 +554,26 @@ function animateCount(el){var target=parseFloat(el.getAttribute('data-count')),s
 function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var e=1-Math.pow(1-p,3);el.innerHTML=(target*e).toFixed(dec)+'<span class="u">'+suf+'</span>';if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
 var statIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target);statIO.unobserve(e.target);}});},{threshold:.5});
 document.querySelectorAll('.num[data-count]').forEach(function(el){statIO.observe(el);});
+
+// optional route finder — highlights relevant work without filtering anything out
+(function(){
+  var routes={
+    data:{signal:'Recommended route · Data / AI',title:'Start where the signal is noisy.',copy:'Follow the work across 7M-review NLP, global data exploration, predictive modelling and decision-ready analytics.'},
+    product:{signal:'Recommended route · Product / Web',title:'From concept to something people can use.',copy:'Explore live product experiences, full-stack platforms and interfaces designed to make complex systems feel clear.'},
+    systems:{signal:'Recommended route · Systems / Scale',title:'Look under the interface.',copy:'See distributed pipelines, real-time monitoring, service integrations and system design built for real operational constraints.'}
+  };
+  var buttons=document.querySelectorAll('[data-route-select]'),result=document.getElementById('questResult'),state=document.getElementById('questState');
+  var signal=document.getElementById('questSignal'),title=document.getElementById('questResultTitle'),copy=document.getElementById('questResultCopy'),cta=document.getElementById('questCta');
+  buttons.forEach(function(button){button.addEventListener('click',function(){
+    var route=button.getAttribute('data-route-select'),content=routes[route];
+    buttons.forEach(function(item){item.setAttribute('aria-pressed',String(item===button));});
+    document.querySelectorAll('[data-card]').forEach(function(card){card.classList.remove('route-match');});
+    var matches=document.querySelectorAll('[data-card][data-route~="'+route+'"]');
+    matches.forEach(function(card){card.classList.add('route-match');});
+    signal.textContent=content.signal;title.textContent=content.title;copy.textContent=content.copy;
+    state.textContent=matches.length+' projects matched';cta.textContent='Reveal matched work ↓';result.classList.add('is-active');
+  });});
+})();
 
 // card spotlight
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches){

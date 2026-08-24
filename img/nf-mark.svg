@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="title desc">
+  <title id="title">NF monogram</title>
+  <desc id="desc">Interlocking N and F letterforms inspired by connected data points.</desc>
+  <defs>
+    <linearGradient id="surface" x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10231f"/>
+      <stop offset="0.56" stop-color="#081216"/>
+      <stop offset="1" stop-color="#171127"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="39" y1="18" x2="50" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2CE6A8"/>
+      <stop offset="1" stop-color="#A98BFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#surface)" stroke="#28443F" stroke-width="2"/>
+  <path d="M16 45V19L39 45" fill="none" stroke="#EEF3F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M39 45V19H50M39 31H47" fill="none" stroke="url(#signal)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="45" r="2.8" fill="#2CE6A8"/>
+</svg>
