@@ -114,6 +114,8 @@
 
   const filters = [...document.querySelectorAll('[data-filter]')];
   const cards = [...document.querySelectorAll('.projects-grid [data-category]')];
+  const searchInput = document.querySelector('#project-search');
+  if (searchInput) searchInput.value = params.get('q') || '';
   const validFilters = new Set(filters.map(button => button.dataset.filter));
   function applyFilter(requested, { updateURL = false, animated = true } = {}) {
     const filter = validFilters.has(requested) ? requested : 'all';
@@ -121,11 +123,15 @@
     const first = new Map(cards.filter(card => !card.hidden).map(card => [card, card.getBoundingClientRect()]));
     cards.forEach(card => {
       activeAnimations.get(card)?.cancel();
-      card.hidden = filter !== 'all' && !card.dataset.category.split(' ').includes(filter);
+      const words = (searchInput?.value || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+      const matchesSearch = words.every(word => card.textContent.toLowerCase().includes(word));
+      card.hidden = (filter !== 'all' && !card.dataset.category.split(' ').includes(filter)) || !matchesSearch;
     });
     filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
     const visible = cards.filter(card => !card.hidden);
     const last = visible.map(card => card.getBoundingClientRect());
+    const empty = document.querySelector('.empty-results');
+    if (empty) empty.hidden = visible.length > 0;
     document.querySelector('.result-count').textContent = `${visible.length} project${visible.length === 1 ? '' : 's'}`;
     if (animated) visible.forEach((card, index) => {
       const before = first.get(card);
@@ -139,6 +145,9 @@
     });
     if (updateURL) {
       const url = new URL(location.href);
+      const query = searchInput?.value.trim() || '';
+      if (query) url.searchParams.set('q', query);
+      else url.searchParams.delete('q');
       if (filter === 'all') url.searchParams.delete('category');
       else url.searchParams.set('category', filter);
       // A filtered collection must not retain an anchor pointing at a hidden card.
@@ -150,17 +159,96 @@
   if (filters.length) {
     document.querySelector('.project-tools').hidden = false;
     const initialCard = cards.find(card => `#${card.id}` === location.hash);
+    if (initialCard && searchInput) searchInput.value = '';
     const requested = params.get('category');
     const initialFilter = initialCard && requested && !initialCard.dataset.category.split(' ').includes(requested) ? 'all' : requested;
     applyFilter(initialFilter, { animated: false });
     filters.forEach(button => button.addEventListener('click', () => {
       if (button.getAttribute('aria-pressed') !== 'true') applyFilter(button.dataset.filter, { updateURL: true });
     }));
-    window.addEventListener('popstate', () => applyFilter(new URLSearchParams(location.search).get('category'), { animated: false }));
+    searchInput?.addEventListener('input', () => applyFilter(filters.find(button => button.getAttribute('aria-pressed') === 'true')?.dataset.filter, { updateURL: true, animated: false }));
+    document.querySelector('#reset-search')?.addEventListener('click', () => {
+      searchInput.value = ''; applyFilter('all', { updateURL: true }); searchInput.focus();
+    });
+    window.addEventListener('popstate', () => {
+      const query = new URLSearchParams(location.search);
+      if (searchInput) searchInput.value = query.get('q') || '';
+      applyFilter(query.get('category'), { animated: false });
+    });
     window.addEventListener('hashchange', () => {
       const target = cards.find(card => `#${card.id}` === location.hash);
-      if (target?.hidden) { applyFilter('all', { updateURL: true, animated: false }); target.scrollIntoView(); }
+      if (target?.hidden) { if (searchInput) searchInput.value = ''; applyFilter('all', { updateURL: true, animated: false }); target.scrollIntoView(); }
     });
+  }
+
+
+  // The explorer is a real tab interface, with matching mouse and keyboard behavior.
+  const focusTabs = [...document.querySelectorAll('.focus-choice')];
+  if (focusTabs.length) {
+    document.querySelector('.work-explorer').hidden = false;
+    function chooseFocus(tab) {
+      focusTabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+      reveal(document.getElementById(tab.getAttribute('aria-controls')));
+    }
+    focusTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => chooseFocus(tab));
+      tab.addEventListener('keydown', event => {
+        const offsets = { ArrowDown: 1, ArrowUp: -1 };
+        let next;
+        if (event.key in offsets) next = (index + offsets[event.key] + focusTabs.length) % focusTabs.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = focusTabs.length - 1;
+        if (next !== undefined) { event.preventDefault(); chooseFocus(focusTabs[next]); focusTabs[next].focus(); }
+      });
+    });
+  }
+
+  const dialog = document.querySelector('.project-dialog');
+  if (dialog?.showModal) {
+    let currentCard;
+    function renderDetail(card) {
+      currentCard = card;
+      const content = document.querySelector('#detail-content');
+      const body = card.querySelector('.project-body').cloneNode(true);
+      body.querySelector('.detail-open')?.remove();
+      const heading = body.querySelector('h3');
+      const title = document.createElement('h2');
+      title.id = 'detail-title'; title.tabIndex = -1; title.textContent = heading.textContent;
+      heading.replaceWith(title);
+      content.replaceChildren(body);
+      const visible = cards.filter(item => !item.hidden);
+      document.querySelector('.detail-position').textContent = `${visible.indexOf(card) + 1} / ${visible.length} projects`;
+      dialog.querySelectorAll('.detail-prev, .detail-next').forEach(button => { button.disabled = visible.length < 2; });
+      if (dialog.open) { title.focus({ preventScroll: true }); reveal(content); }
+    }
+    cards.forEach(card => {
+      const button = document.createElement('button');
+      button.type = 'button'; button.className = 'detail-open'; button.textContent = 'Take a closer look +';
+      button.setAttribute('aria-haspopup', 'dialog');
+      button.setAttribute('aria-label', `Explore ${card.querySelector('h3').textContent.trim()}`);
+      card.querySelector('.project-body').append(button);
+      button.addEventListener('click', () => {
+        renderDetail(card); dialog.showModal(); root.classList.add('dialog-is-open');
+        dialog.querySelector('#detail-title').focus({ preventScroll: true }); reveal(dialog);
+      });
+    });
+    dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => { root.classList.remove('dialog-is-open'); activeAnimations.get(dialog)?.cancel(); });
+    dialog.addEventListener('click', event => {
+      const box = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
+    });
+    for (const [selector, step] of [['.detail-prev', -1], ['.detail-next', 1]]) {
+      dialog.querySelector(selector).addEventListener('click', () => {
+        const visible = cards.filter(card => !card.hidden);
+        renderDetail(visible[(visible.indexOf(currentCard) + step + visible.length) % visible.length]);
+      });
+    }
   }
 
   // Content is visible by default, even without JS/WAAPI/IntersectionObserver.

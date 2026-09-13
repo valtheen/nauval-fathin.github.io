@@ -1132,3 +1132,62 @@ html[data-motion=reduced] ::view-transition-old(root), html[data-motion=reduced]
 @media (pointer: coarse) {
   .motion-toggle, .filters button, .menu-toggle { min-height: 44px; }
 }
+
+/* Interactive work discovery */
+.work-explorer { padding-block: 65px 10px; }
+.explorer-hint { color: var(--muted); font-size: 12px; }
+.explorer-grid { display: grid; grid-template-columns: 1fr 1.25fr; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.focus-choices { padding: 22px; display: flex; flex-direction: column; justify-content: center; gap: 10px; background: #edf0e5; }
+.focus-choice { display: flex; gap: 18px; align-items: center; text-align: left; padding: 22px 18px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--ink); cursor: pointer; }
+.focus-choice[aria-selected=true] { background: var(--paper); border-color: #cbd8bd; }
+.focus-choice:hover { border-color: #9eaf90; }
+.focus-choice strong { display: block; font-size: 15px; font-weight: 500; }
+.focus-choice small { display: block; font-size: 11px; margin-top: 5px; color: var(--muted); }
+.focus-choice > span:last-child { margin-left: auto; }
+.focus-number { font-family: var(--serif); font-size: 24px; color: #789168; }
+.focus-stage { background: var(--ink); color: var(--paper); padding: 36px; display: grid; }
+.focus-panel { grid-area: 1 / 1; display: flex; flex-direction: column; align-items: start; min-height: 340px; }
+.focus-topline { display: flex; justify-content: space-between; width: 100%; font-size: 9px; letter-spacing: .14em; color: var(--lime); margin-bottom: 28px; }
+.focus-panel h3 { font-size: 32px; max-width: 390px; }
+.focus-panel > p { color: #d2dfd4; font-size: 13px; margin-top: 20px; line-height: 1.8; }
+.focus-panel .tags span { background: #385346; color: #e5eddc; }
+.focus-panel > a { margin-top: auto; }
+.project-tools { flex-wrap: wrap; }
+.project-search { width: 100%; display: block; margin-bottom: 8px; }
+.project-search > span { display: block; font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+.project-search input { width: 100%; background: #fffef8; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; font: inherit; min-height: 52px; }
+.project-search input:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+.empty-results { text-align: center; border: 1px dashed var(--line); border-radius: 8px; padding: 55px 25px; }
+.empty-results p { color: var(--muted); margin: 14px 0 22px; }
+.empty-results .button { border: 0; cursor: pointer; }
+.detail-open { padding: 14px 0 0; margin-top: 18px; width: 100%; background: none; color: var(--green); border: 0; border-top: 1px solid var(--line); font-size: 12px; text-align: left; cursor: pointer; }
+.detail-open:hover { color: var(--orange); }
+html { scrollbar-gutter: stable; }
+html.dialog-is-open { overflow: hidden; }
+.project-dialog { width: min(720px, calc(100% - 32px)); max-height: calc(100dvh - 48px); border: 1px solid var(--line); border-radius: 12px; background: var(--paper); color: var(--ink); padding: 0; overflow-y: auto; }
+.project-dialog::backdrop { background: #142d25b8; }
+.dialog-top, .dialog-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 28px; }
+.dialog-top { border-bottom: 1px solid var(--line); }
+.dialog-bottom { border-top: 1px solid var(--line); }
+.dialog-top button, .dialog-bottom button { background: transparent; border: 1px solid var(--line); border-radius: 5px; padding: 10px 14px; font-size: 12px; color: var(--ink); cursor: pointer; }
+.dialog-bottom button:disabled { opacity: .4; cursor: default; }
+.detail-position { font-size: 10px; color: var(--muted); }
+#detail-content .project-body { padding: 35px; }
+#detail-content h2 { font-size: 38px; }
+#detail-content .project-description { font-size: 16px; line-height: 1.85; }
+#detail-content .tags span { font-size: 12px; }
+#detail-content .text-link { font-size: 14px; }
+@media(max-width:760px) {
+  .work-explorer { padding-top: 40px; }
+  .work-explorer .section-heading { flex-direction: column; }
+  .explorer-grid { grid-template-columns: 1fr; }
+  .focus-choices { padding: 12px; gap: 4px; }
+  .focus-choice { padding: 15px 12px; }
+  .focus-stage { padding: 26px; }
+  .focus-panel h3 { font-size: 28px; }
+  .focus-panel { min-height: 380px; }
+  #detail-content .project-body { padding: 24px; }
+  #detail-content h2 { font-size: 30px; }
+  .dialog-top, .dialog-bottom { padding: 16px; gap: 8px; }
+  .dialog-bottom button { padding: 10px; }
+}

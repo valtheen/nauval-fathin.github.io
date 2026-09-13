@@ -6,8 +6,8 @@
 <meta name="description" content="Explore 11 projects in data science, machine learning, product development and software systems by Nauval Fathin.">
 <meta name="theme-color" content="#f7f8f2">
 <link rel="icon" href="img/nf-mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/site.css?v=be137ff6abb3">
-<script src="js/site.js?v=34e3f1bc6220" defer>
+<link rel="stylesheet" href="css/site.css?v=2971929ebf13">
+<script src="js/site.js?v=2ec084c48549" defer>
 </script>
 </head>
 <body><a class="skip-link" href="#main">Skip to content</a>
@@ -28,6 +28,7 @@
 </section>
 <section class="container projects-section" aria-label="Project collection">
 <div class="project-tools" hidden>
+<label class="project-search"><span>Find something interesting</span><input id="project-search" type="search" placeholder="Try Python, React, dashboard…" autocomplete="off" aria-controls="project-collection"></label>
 <div class="filters" role="group" aria-label="Filter projects"><button data-filter="all" aria-pressed="true">All projects</button><button data-filter="data" aria-pressed="false">Data & ML</button><button data-filter="product" aria-pressed="false">Products</button><button data-filter="systems" aria-pressed="false">Systems</button>
 </div>
 <p class="result-count" role="status" aria-live="polite">11 projects
@@ -35,7 +36,8 @@
 </div>
 <h2 class="sr-only">All projects
 </h2>
-<div class="projects-grid">
+<div class="empty-results" hidden><h3>No projects match that search.</h3><p>Try a technology or choose another category.</p><button class="button" id="reset-search" type="button">Reset filters ↻</button></div>
+<div class="projects-grid" id="project-collection">
 <article class="project-card" id="project-fatheen" data-category="product">
 <div class="project-body">
 <p class="eyebrow">Product Landing Page &middot; Islamic Tech
@@ -187,6 +189,11 @@
 </div>
 </section>
 </main>
+<dialog class="project-dialog" aria-labelledby="detail-title">
+<div class="dialog-top"><span class="tiny-label">PROJECT EXPLORER</span><button class="dialog-close" type="button" aria-label="Close project details">Close ×</button></div>
+<div id="detail-content"></div>
+<div class="dialog-bottom"><button type="button" class="detail-prev">← Previous</button><span class="detail-position"></span><button type="button" class="detail-next">Next →</button></div>
+</dialog>
 <footer class="site-footer">
 <div class="container footer-inner"><a href="index.html" class="footer-name">Nauval Fathin<span>Data, thoughtfully put to work.</span></a>
 <div class="footer-links"><button class="motion-toggle" type="button" aria-pressed="true" hidden>Motion: on</button><a href="https://github.com/valtheen" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://drive.google.com/file/d/1DxTMjnS7KH3JrrJI8QVZoDub11MW3Iaz/view?usp=sharing" target="_blank" rel="noopener noreferrer">Résumé ↗</a>

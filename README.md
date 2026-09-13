@@ -59,3 +59,9 @@ Local-only inspection harness: `index.html?t=0`, `?t=0.25`, and `?t=1` freeze WA
 Motion verified in the in-app browser: frozen start/middle/end frames, reduced mode, repeated filter changes, reload persistence, footer toggle, mobile menu/Escape, and responsive layout. The OS preference path is implemented through matchMedia; reduced-mode screenshots use the local override. A device-level performance trace/FPS benchmark has not been run, so this revision does not claim a measured 60fps guarantee.
 
 After editing the shared CSS or JS, run `python3 scripts/version_assets.py` to refresh their content-based version URLs in all four pages. This prevents stale assets after an update; it is a maintenance helper, not a required runtime/build dependency. The current motion preview uses `http://127.0.0.1:4174/index.html`.
+
+## Interactive project discovery
+
+Home now includes a keyboard-accessible focus selector (Data, Products, Systems) that changes its project recommendation. Projects adds text search combined with category filters, shareable/reloadable `q` queries, an empty state with reset, and a native dialog explorer with Previous/Next across the current results. Escape closes the dialog and restores the original trigger's focus. All 11 static project summaries and original external links remain available without JavaScript; controls progressively enhance that content.
+
+Verified: focus tabs with click and ArrowDown, Python/React search, persisted query on reload, no-result/reset states, dialog Next/Previous, Escape/focus restoration, and mobile dialog layout. Detail descriptions reuse the existing project content and do not add new performance or experience claims.
