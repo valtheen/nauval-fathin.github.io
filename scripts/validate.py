@@ -11,6 +11,7 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.ids, self.links, self.h1s, self.active = set(), [], 0, []
         self.stack = []
+        self.projects = set()
         self.feed(source)
         assert not self.stack, f'Unclosed elements: {self.stack}'
 
@@ -19,6 +20,8 @@ class Page(HTMLParser):
         if 'id' in attrs:
             assert attrs['id'] not in self.ids, f'Duplicate ID: {attrs["id"]}'
             self.ids.add(attrs['id'])
+        if tag == 'article' and 'data-category' in attrs:
+            self.projects.add(attrs.get('id'))
         if tag == 'h1':
             self.h1s += 1
         if attrs.get('aria-current') == 'page':
@@ -48,5 +51,5 @@ for name, page in pages.items():
         if url.fragment and target in pages:
             assert url.fragment in pages[target].ids, f'{name}: missing anchor {link}'
     print(f'PASS {name}: headings, nesting, navigation, links, assets')
-assert len([i for i in pages['projects.html'].ids if i.startswith('project-')]) == 11
+assert len(pages['projects.html'].projects) == 11
 print('PASS all 11 projects retained')
