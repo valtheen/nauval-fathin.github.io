@@ -59,3 +59,12 @@ Local-only inspection harness: `index.html?t=0`, `?t=0.25`, and `?t=1` freeze WA
 Motion verified in the in-app browser: frozen start/middle/end frames, reduced mode, repeated filter changes, reload persistence, footer toggle, mobile menu/Escape, and responsive layout. The OS preference path is implemented through matchMedia; reduced-mode screenshots use the local override. A device-level performance trace/FPS benchmark has not been run, so this revision does not claim a measured 60fps guarantee.
 
 After editing the shared CSS or JS, run `python3 scripts/version_assets.py` to refresh their content-based version URLs in all four pages. This prevents stale assets after an update; it is a maintenance helper, not a required runtime/build dependency. The current motion preview uses `http://127.0.0.1:4174/index.html`.
+
+
+## Interactive portfolio refresh
+
+The four-page site now includes an emerald/lime editorial style, a sticky navigation bar with reading progress, and a visible Motion control. Home has a Data / Systems / Product focus explorer. All project cards offer an accessible detail dialog using existing project content. Projects supports text search combined with category filters, URL persistence, a clear/reset state, and the `/` shortcut. Contact offers email copying with feedback and a topic selector that prepares the subject in the visitor’s mail app. Nothing sends automatically.
+
+Content remains available without JavaScript. Optional movement respects the system preference and the saved Motion setting. The new interactions use the existing vanilla JavaScript and CSS; no new production dependencies.
+
+Validation: page structure and local assets, all 11 projects, JavaScript syntax, desktop/mobile at 320/390/768/1440 px, combined filters/search and reload state, dialog Escape/focus restoration, mobile menu, contact controls, and reduced-motion behavior. No browser errors during these checks.

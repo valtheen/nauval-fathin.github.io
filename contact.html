@@ -6,15 +6,16 @@
 <meta name="description" content="Contact Nauval Fathin for data science and analytics roles, internships and project conversations.">
 <meta name="theme-color" content="#f7f8f2">
 <link rel="icon" href="img/nf-mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/site.css?v=be137ff6abb3">
-<script src="js/site.js?v=34e3f1bc6220" defer>
+<link rel="stylesheet" href="css/site.css?v=8c1795c98290">
+<script src="js/site.js?v=73071352f836" defer>
 </script>
 </head>
-<body><a class="skip-link" href="#main">Skip to content</a>
+<body class="page-contact"><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-<div class="container header-inner"><a class="brand" href="index.html" aria-label="Nauval Fathin home"><span class="monogram">nf<span>.</span></span><span>Nauval Fathin<span class="brand-sub">DATA & DEVELOPMENT</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu <span aria-hidden="true">☰</span></button>
+<div class="reading-progress" aria-hidden="true"></div>
+<div class="container header-inner"><a class="brand" href="index.html" aria-label="Nauval Fathin home"><span class="monogram">nf<span>.</span></span><span>Nauval Fathin<span class="brand-sub">DATA & DEVELOPMENT</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu <span aria-hidden="true">≡</span></button>
 <nav id="navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="contact.html" aria-current="page">Contact</a>
-</nav><a class="header-contact" href="mailto:Fathinnauval@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+</nav><button class="motion-toggle" type="button" aria-pressed="true" hidden>Motion: on</button><a class="header-contact" href="mailto:Fathinnauval@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
 </div>
 </header>
 <main id="main">
@@ -25,14 +26,14 @@
 <h1>Good work starts<br>with a <em>conversation.</em>
 </h1>
 <p class="hero-intro">Have a dataset to make sense of, a product to build, or a role in mind? I’d love to hear about it.
-</p><a class="button" href="mailto:Fathinnauval@gmail.com">Write me an email ↗</a>
+</p><div class="contact-topics" hidden><label for="contact-topic">WHAT DO YOU HAVE IN MIND?</label><select id="contact-topic"><option value="">Just saying hello</option><option value="A data role or internship">A role or internship</option><option value="Let’s collaborate on a project">A project collaboration</option></select></div><a class="button compose-email" href="mailto:Fathinnauval@gmail.com">Write me an email ↗</a>
 <p class="contact-note">Open to Data Scientist / Data Analyst roles and internships.
 </p>
 </div>
 <div class="contact-panel">
 <p class="eyebrow">FIND ME HERE
 </p><a class="contact-row" href="mailto:Fathinnauval@gmail.com"><span><small>EMAIL</small>Fathinnauval@gmail.com</span><span>↗</span></a><a class="contact-row" href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer"><span><small>LINKEDIN</small>Nauval Fathin</span><span>↗</span></a><a class="contact-row" href="https://github.com/valtheen" target="_blank" rel="noopener noreferrer"><span><small>GITHUB</small>@valtheen</span><span>↗</span></a>
-<div class="location"><span aria-hidden="true">◎</span>
+<button type="button" class="copy-email" hidden>Copy email address <span aria-hidden="true">↗</span></button><div class="location"><span aria-hidden="true">◎</span>
 <div><strong>Bandung, Indonesia</strong>
 <p>Western Indonesia Time · UTC+7
 </p>
@@ -43,11 +44,16 @@
 </main>
 <footer class="site-footer">
 <div class="container footer-inner"><a href="index.html" class="footer-name">Nauval Fathin<span>Data, thoughtfully put to work.</span></a>
-<div class="footer-links"><button class="motion-toggle" type="button" aria-pressed="true" hidden>Motion: on</button><a href="https://github.com/valtheen" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://drive.google.com/file/d/1DxTMjnS7KH3JrrJI8QVZoDub11MW3Iaz/view?usp=sharing" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+<div class="footer-links"><a href="https://github.com/valtheen" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/nauval-fathin-1098451bb" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://drive.google.com/file/d/1DxTMjnS7KH3JrrJI8QVZoDub11MW3Iaz/view?usp=sharing" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
 </div>
 <p>© 2026 Muhammad Nauval Fathin Kusumah<br>Based in Bandung, Indonesia
 </p>
 </div>
 </footer>
+<dialog class="project-dialog" aria-labelledby="detail-title">
+<div class="dialog-top"><span class="eyebrow">PROJECT NOTES</span><button class="dialog-close" type="button" aria-label="Close project details">Close <span aria-hidden="true">×</span></button></div>
+<div class="dialog-content"></div>
+</dialog>
+<div class="toast" role="status" hidden></div>
 </body>
 </html>

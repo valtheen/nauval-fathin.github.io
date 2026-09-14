@@ -114,17 +114,23 @@
 
   const filters = [...document.querySelectorAll('[data-filter]')];
   const cards = [...document.querySelectorAll('.projects-grid [data-category]')];
+  const searchInput = document.querySelector('#work-search');
+  let activeFilter = 'all';
   const validFilters = new Set(filters.map(button => button.dataset.filter));
   function applyFilter(requested, { updateURL = false, animated = true } = {}) {
     const filter = validFilters.has(requested) ? requested : 'all';
+    activeFilter = filter;
+    const query = (searchInput?.value || '').trim().toLowerCase();
     // FLIP: batch current-position reads, DOM writes, then final-position reads.
     const first = new Map(cards.filter(card => !card.hidden).map(card => [card, card.getBoundingClientRect()]));
     cards.forEach(card => {
       activeAnimations.get(card)?.cancel();
-      card.hidden = filter !== 'all' && !card.dataset.category.split(' ').includes(filter);
+      card.hidden = (filter !== 'all' && !card.dataset.category.split(' ').includes(filter)) || !card.textContent.toLowerCase().includes(query);
     });
     filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
     const visible = cards.filter(card => !card.hidden);
+    const emptyState = document.querySelector('.empty-results');
+    if (emptyState) emptyState.hidden = visible.length > 0;
     const last = visible.map(card => card.getBoundingClientRect());
     document.querySelector('.result-count').textContent = `${visible.length} project${visible.length === 1 ? '' : 's'}`;
     if (animated) visible.forEach((card, index) => {
@@ -141,6 +147,8 @@
       const url = new URL(location.href);
       if (filter === 'all') url.searchParams.delete('category');
       else url.searchParams.set('category', filter);
+      if (query) url.searchParams.set('q', searchInput.value.trim());
+      else url.searchParams.delete('q');
       // A filtered collection must not retain an anchor pointing at a hidden card.
       const anchor = cards.find(card => `#${card.id}` === url.hash);
       if (anchor?.hidden) url.hash = '';
@@ -149,19 +157,143 @@
   }
   if (filters.length) {
     document.querySelector('.project-tools').hidden = false;
+    document.querySelector('.project-search').hidden = false;
+    searchInput.value = params.get('q') || '';
     const initialCard = cards.find(card => `#${card.id}` === location.hash);
     const requested = params.get('category');
     const initialFilter = initialCard && requested && !initialCard.dataset.category.split(' ').includes(requested) ? 'all' : requested;
+    if (initialCard) searchInput.value = '';
     applyFilter(initialFilter, { animated: false });
+    searchInput.addEventListener('input', () => applyFilter(activeFilter, { updateURL: true }));
+    document.querySelector('.reset-search').addEventListener('click', () => { searchInput.value = ''; applyFilter('all', { updateURL: true }); searchInput.focus(); });
+    document.addEventListener('keydown', event => {
+      if (event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey && !document.querySelector('dialog[open]') && !event.target.closest('input, textarea, select, [contenteditable]')) { event.preventDefault(); searchInput.focus(); }
+    });
     filters.forEach(button => button.addEventListener('click', () => {
       if (button.getAttribute('aria-pressed') !== 'true') applyFilter(button.dataset.filter, { updateURL: true });
     }));
-    window.addEventListener('popstate', () => applyFilter(new URLSearchParams(location.search).get('category'), { animated: false }));
+    window.addEventListener('popstate', () => { const state = new URLSearchParams(location.search); searchInput.value = state.get('q') || ''; applyFilter(state.get('category'), { animated: false }); });
     window.addEventListener('hashchange', () => {
       const target = cards.find(card => `#${card.id}` === location.hash);
-      if (target?.hidden) { applyFilter('all', { updateURL: true, animated: false }); target.scrollIntoView(); }
+      if (target?.hidden) { searchInput.value = ''; applyFilter('all', { updateURL: true, animated: false }); target.scrollIntoView(); }
     });
   }
+
+
+  // Project detail previews use the existing content as their only data source.
+  const dialog = document.querySelector('.project-dialog');
+  const dialogContent = dialog?.querySelector('.dialog-content');
+  let detailTrigger;
+  document.querySelectorAll('.project-card').forEach((card, index) => {
+    const badge = document.createElement('span');
+    badge.className = 'project-index'; badge.setAttribute('aria-hidden', 'true');
+    badge.textContent = String(index + 1).padStart(2, '0');
+    (card.querySelector('.project-art') || card).append(badge);
+    if (!dialog?.showModal) return;
+    const button = document.createElement('button');
+    button.className = 'project-open'; button.type = 'button';
+    button.innerHTML = 'Explore project <span aria-hidden="true">+</span>';
+    button.setAttribute('aria-label', `Explore ${card.querySelector('h3').textContent.trim()}`);
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.addEventListener('click', () => {
+      detailTrigger = button;
+      dialogContent.replaceChildren();
+      const art = card.querySelector('.project-art');
+      if (art) {
+        const previewArt = art.cloneNode(true);
+        previewArt.querySelector('.project-index')?.remove();
+        dialogContent.append(previewArt);
+      }
+      const heading = document.createElement('h2');
+      heading.id = 'detail-title'; heading.textContent = card.querySelector('h3').textContent.trim();
+      dialogContent.append(heading);
+      for (const child of card.querySelector('.project-body').children) {
+        if (child.matches('.project-description, .tags, .project-metric, .project-note, a')) dialogContent.append(child.cloneNode(true));
+      }
+      dialog.showModal();
+      root.classList.add('dialog-open');
+      animate(dialog, [{ opacity: 0, transform: 'translateY(14px) scale(.98)' }, { opacity: 1, transform: 'none' }], { duration: 220 });
+    });
+    card.querySelector('.project-body').append(button);
+  });
+  dialog?.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const rect = dialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  });
+  dialog?.addEventListener('close', () => {
+    activeAnimations.get(dialog)?.cancel();
+    root.classList.remove('dialog-open');
+    detailTrigger?.focus({ preventScroll: true });
+  });
+
+  const focusData = {
+    data: { number: '01', title: 'Make the complex clear.', description: 'Exploring patterns, training models, and turning analysis into decisions people can use.', stack: 'Python / SQL / PySpark / DistilBERT', nodes: ['Raw data', 'Find the signal', 'Clear insight'], link: 'Explore data projects' },
+    systems: { number: '02', title: 'Connect the moving parts.', description: 'From distributed pipelines to live network monitoring: making the pieces work together.', stack: 'PySpark / FastAPI / Docker / WebSocket', nodes: ['Collect', 'Connect & process', 'Monitor'], link: 'Explore systems projects' },
+    product: { number: '03', title: 'Give the idea an interface.', description: 'Building useful experiences around the technology, from web platforms to mobile applications.', stack: 'React / TypeScript / Laravel / Flutter', nodes: ['An idea', 'Build & refine', 'An experience'], link: 'Explore product projects' },
+  };
+  const focusPanel = document.querySelector('.focus-panel');
+  const focusButtons = [...document.querySelectorAll('[data-focus]')];
+  if (focusPanel) {
+    document.querySelector('.focus-switch').hidden = false;
+    focusButtons.forEach(button => button.addEventListener('click', () => {
+      if (button.getAttribute('aria-pressed') === 'true') return;
+      const key = button.dataset.focus;
+      const data = focusData[key];
+      focusButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      focusPanel.querySelector('.focus-number').textContent = data.number;
+      focusPanel.querySelector('h3').textContent = data.title;
+      focusPanel.querySelector('.focus-caption p').textContent = data.description;
+      focusPanel.querySelector('.focus-stack').textContent = data.stack;
+      focusPanel.querySelectorAll('.diagram-node').forEach((node, index) => { node.textContent = data.nodes[index]; });
+      const link = focusPanel.querySelector('.focus-link');
+      link.firstChild.textContent = data.link + ' ';
+      link.href = `projects.html?category=${key}`;
+      animate(focusPanel.querySelector('.focus-caption'), [{ opacity: .2, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 220 });
+    }));
+  }
+
+  const topic = document.querySelector('#contact-topic');
+  if (topic) {
+    document.querySelector('.contact-topics').hidden = false;
+    topic.addEventListener('change', () => {
+      document.querySelector('.compose-email').href = 'mailto:Fathinnauval@gmail.com' + (topic.value ? `?subject=${encodeURIComponent(topic.value)}` : '');
+    });
+  }
+  const copyEmail = document.querySelector('.copy-email');
+  let toastTimer;
+  function notify(message) {
+    const toast = document.querySelector('.toast');
+    clearTimeout(toastTimer);
+    toast.textContent = message; toast.hidden = false;
+    toastTimer = setTimeout(() => { toast.hidden = true; }, 5000);
+  }
+  if (copyEmail && navigator.clipboard?.writeText) {
+    copyEmail.hidden = false;
+    copyEmail.addEventListener('click', async () => {
+      copyEmail.disabled = true;
+      try { await navigator.clipboard.writeText('Fathinnauval@gmail.com'); notify('Email copied. Let’s make something useful.'); }
+      catch { notify('Couldn’t copy automatically. Email: Fathinnauval@gmail.com'); }
+      finally { copyEmail.disabled = false; }
+    });
+  }
+
+  // One frame per scroll event burst; no permanent animation loop.
+  const progress = document.querySelector('.reading-progress');
+  let progressFrame = 0;
+  function updateProgress() {
+    progressFrame = 0;
+    const distance = root.scrollHeight - window.innerHeight;
+    const value = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
+    if (progress) progress.style.transform = `scaleX(${value})`;
+  }
+  const scheduleProgress = () => { if (!progressFrame) progressFrame = requestAnimationFrame(updateProgress); };
+  window.addEventListener('scroll', scheduleProgress, { passive: true });
+  window.addEventListener('resize', scheduleProgress);
+  window.addEventListener('pagehide', () => { cancelAnimationFrame(progressFrame); clearTimeout(toastTimer); });
+  window.addEventListener('pageshow', scheduleProgress);
+  updateProgress();
 
   // Content is visible by default, even without JS/WAAPI/IntersectionObserver.
   const entrance = document.querySelectorAll('.hero-copy > *, .hero-portrait, .page-heading > *, .contact-layout > *');
