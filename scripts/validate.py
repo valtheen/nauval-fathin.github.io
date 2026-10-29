@@ -51,5 +51,5 @@ for name, page in pages.items():
         if url.fragment and target in pages:
             assert url.fragment in pages[target].ids, f'{name}: missing anchor {link}'
     print(f'PASS {name}: headings, nesting, navigation, links, assets')
-assert len(pages['projects.html'].projects) == 11
-print('PASS all 11 projects retained')
+assert len(pages['projects.html'].projects) == 13
+print('PASS all 13 projects retained')

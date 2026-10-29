@@ -321,3 +321,32 @@
     if (target) location.replace(target);
   }
 })();
+
+// Small desktop details; content and navigation also work without JavaScript.
+(() => {
+  const clock = document.querySelector('.local-clock');
+  function updateClock() {
+    if (clock) clock.textContent = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', hour12: false
+    }).format(new Date()) + ' WIB';
+  }
+  updateClock();
+  let timer = setInterval(updateClock, 60000);
+  document.addEventListener('visibilitychange', () => {
+    clearInterval(timer);
+    if (!document.hidden) { updateClock(); timer = setInterval(updateClock, 60000); }
+  });
+  window.addEventListener('pagehide', () => clearInterval(timer));
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) { clearInterval(timer); updateClock(); timer = setInterval(updateClock, 60000); }
+  });
+  const toggle = document.querySelector('.photo-mode');
+  if (toggle) {
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      const active = toggle.getAttribute('aria-pressed') !== 'true';
+      toggle.setAttribute('aria-pressed', String(active));
+      document.querySelector('.profile-photo').classList.toggle('is-mono', active);
+    });
+  }
+})();

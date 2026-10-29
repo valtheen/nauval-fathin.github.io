@@ -6,7 +6,7 @@ A static, four-page portfolio for data science, analytics, and software developm
 
 - `index.html`: introduction, original portrait, key figures, and three selected projects.
 - `about.html`: profile, technical skills, education, and experience.
-- `projects.html`: all 11 existing projects, with All / Data & ML / Products / Systems filters. Categories overlap.
+- `projects.html`: all 13 projects, with All / Data & ML / Products / Systems filters. Categories overlap.
 - `contact.html`: email, LinkedIn, GitHub, location, and access to the existing résumé link through the footer.
 
 Each page has its own URL, title, description, and active navigation state. Navigation and content work without JavaScript; JavaScript adds the collapsible mobile menu, project filters, and redirects for old home-page section bookmarks. Contact links open the visitor's email application; no message is sent by this site.
@@ -26,9 +26,9 @@ python3 scripts/validate.py
 node --check js/site.js
 ```
 
-The validator checks HTML nesting, one main heading per page, unique IDs, active navigation, internal files and anchors, image alternative text, and the 11-project inventory.
+The validator checks HTML nesting, one main heading per page, unique IDs, active navigation, internal files and anchors, image alternative text, and the 13-project inventory.
 
-Browser checks performed: all four pages at 320px, 768px, and 1440px; visual inspection at desktop and 390px; mobile menu and page navigation; all project filters (11 total, 5 Data & ML, 7 Products, 6 Systems); no horizontal overflow, broken images, or browser warnings/errors in the checked views.
+Browser checks performed: all four pages at 320px, 768px, and 1440px; visual inspection at desktop and 390px; mobile menu and page navigation; all project filters (13 total); no horizontal overflow, broken images, or browser warnings/errors in the checked views.
 
 ## Editing
 
